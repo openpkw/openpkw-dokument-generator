@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp;
+package pl.openpkw.poc.backend;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;

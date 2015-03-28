@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp;
+package pl.openpkw.poc.backend;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pl.openpkw.poc.webapp.domain.Formularz;
-import pl.openpkw.poc.webapp.pdf.HtmlPdfGenerator;
-import pl.openpkw.poc.webapp.pdf.StamperPdfGenerator;
+import pl.openpkw.poc.backend.domain.Formularz;
+import pl.openpkw.poc.backend.pdf.HtmlPdfGenerator;
+import pl.openpkw.poc.backend.pdf.StamperPdfGenerator;
 
 public class PdfServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
@@ -44,6 +44,8 @@ public class PdfServlet extends HttpServlet {
             pdfFile = stamperPdfGenerator.generate(form);
         }
 
+        response.setContentType("application/pdf");
+        response.setContentLength(pdfFile.length);
         response.getOutputStream().write(pdfFile);
     }
 }

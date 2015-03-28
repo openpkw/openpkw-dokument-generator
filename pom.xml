@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.openpkw.poc</groupId>
-	<artifactId>webapp</artifactId>
+	<artifactId>backend</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 
-	<name>OpenPKW POC WebApp</name>
+	<name>OpenPKW POC Backend</name>
 	<url>http://openpkw.org</url>
 
 	<profiles>

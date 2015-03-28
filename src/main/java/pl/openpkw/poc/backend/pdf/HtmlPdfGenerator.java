@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp.pdf;
+package pl.openpkw.poc.backend.pdf;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -14,8 +14,8 @@ import javax.inject.Singleton;
 import org.apache.velocity.VelocityContext;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
-import pl.openpkw.poc.webapp.VelocityEngine;
-import pl.openpkw.poc.webapp.domain.Formularz;
+import pl.openpkw.poc.backend.VelocityEngine;
+import pl.openpkw.poc.backend.domain.Formularz;
 
 import com.lowagie.text.pdf.BaseFont;
 

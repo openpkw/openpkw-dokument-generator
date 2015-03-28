@@ -1,7 +1,7 @@
-package pl.openpkw.poc.webapp.domain;
+package pl.openpkw.poc.backend.domain;
 
-import pl.openpkw.poc.webapp.annotations.FormElement;
-import pl.openpkw.poc.webapp.annotations.RequestParameter;
+import pl.openpkw.poc.backend.annotations.FormElement;
+import pl.openpkw.poc.backend.annotations.RequestParameter;
 
 public class Formularz {
 

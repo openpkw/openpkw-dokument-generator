@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp.pdf;
+package pl.openpkw.poc.backend.pdf;
 
 import java.io.File;
 import java.net.URL;

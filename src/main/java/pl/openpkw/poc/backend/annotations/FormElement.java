@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp.annotations;
+package pl.openpkw.poc.backend.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

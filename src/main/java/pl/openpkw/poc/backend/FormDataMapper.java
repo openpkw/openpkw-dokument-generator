@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp;
+package pl.openpkw.poc.backend;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -6,8 +6,8 @@ import java.lang.reflect.Field;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServletRequest;
 
-import pl.openpkw.poc.webapp.annotations.RequestParameter;
-import pl.openpkw.poc.webapp.domain.Formularz;
+import pl.openpkw.poc.backend.annotations.RequestParameter;
+import pl.openpkw.poc.backend.domain.Formularz;
 
 @Singleton
 public class FormDataMapper {

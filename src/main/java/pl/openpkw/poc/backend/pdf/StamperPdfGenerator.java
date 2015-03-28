@@ -1,4 +1,4 @@
-package pl.openpkw.poc.webapp.pdf;
+package pl.openpkw.poc.backend.pdf;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -9,8 +9,8 @@ import java.text.DecimalFormat;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import pl.openpkw.poc.webapp.annotations.FormElement;
-import pl.openpkw.poc.webapp.domain.Formularz;
+import pl.openpkw.poc.backend.annotations.FormElement;
+import pl.openpkw.poc.backend.domain.Formularz;
 
 import com.lowagie.text.Element;
 import com.lowagie.text.Font;
