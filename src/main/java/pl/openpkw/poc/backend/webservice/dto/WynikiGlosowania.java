@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.rest.dto;
+package pl.openpkw.poc.backend.webservice.dto;
 
 import java.util.ArrayList;
 import java.util.List;

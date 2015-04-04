@@ -1,7 +1,7 @@
-package pl.openpkw.poc.backend.rest.dto;
+package pl.openpkw.poc.backend.webservice.dto;
 
 public class AkcjaWyborcza {
-    
+
     private String dataGlosowania;
 
     private String dzienMiesiacGlosowania;

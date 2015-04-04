@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.rest;
+package pl.openpkw.poc.backend.webservice;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -10,13 +10,25 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import pl.openpkw.poc.backend.pdf.HtmlPdfGenerator;
-import pl.openpkw.poc.backend.rest.dto.Form;
+import pl.openpkw.poc.backend.webservice.dto.Form;
 
-@Path("pdf")
-public class PdfService {
+/**
+ * Represents Protokol kalkulatora wyborczego. 
+ * 
+ * 
+ */
+@Path("/protocol")
+public class ProtocolService {
 
     @Inject
     private HtmlPdfGenerator pdfGenerator;
+
+    @GET
+    @Path("/version")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getVersion() {
+        return "1.0.0-SNAPSHOT ToDo";
+    }
 
     @GET
     @Produces("text/plain")

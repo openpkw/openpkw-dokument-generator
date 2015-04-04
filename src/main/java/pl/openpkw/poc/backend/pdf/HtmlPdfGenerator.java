@@ -11,7 +11,8 @@ import javax.inject.Singleton;
 import org.apache.velocity.VelocityContext;
 
 import pl.openpkw.poc.backend.VelocityEngine;
-import pl.openpkw.poc.backend.rest.dto.Form;
+import pl.openpkw.poc.backend.webservice.dto.Form;
+
 
 @Singleton
 public class HtmlPdfGenerator {
@@ -24,6 +25,8 @@ public class HtmlPdfGenerator {
 
     /**
      * Tworzy dokument PDF na podstawie szablonu HTML oraz danych z formularza
+     * @param formData
+     * @return 
      */
     public byte[] generate(Form formData) {
         try {
