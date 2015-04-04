@@ -10,6 +10,7 @@ import pl.openpkw.poc.backend.annotations.RequestParameter;
 import pl.openpkw.poc.backend.domain.Formularz;
 
 @Singleton
+@Deprecated
 public class FormDataMapper {
 
     public Formularz getFormData(HttpServletRequest request) {

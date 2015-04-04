@@ -8,48 +8,19 @@ import java.nio.file.Paths;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import org.apache.log4j.Logger;
 import org.apache.velocity.VelocityContext;
 
 import pl.openpkw.poc.backend.VelocityEngine;
-import pl.openpkw.poc.backend.domain.Formularz;
 import pl.openpkw.poc.backend.rest.dto.Form;
 
 @Singleton
 public class HtmlPdfGenerator {
     
-    private final static Logger log = Logger.getLogger(HtmlPdfGenerator.class);
-
     @Inject
     private VelocityEngine velocity;
 
     @Inject
     private PdfRenderer pdfRenderer;
-
-    /**
-     * Do usunięcia kiedy frontendowcy zaimplementują przesyłanie danych formularza w postaci JSON
-     */
-    @Deprecated
-    public byte[] generate(Formularz form) {
-        try {
-            log.info("PDF generation starts");
-            
-            Path workingDirectory = Files.createTempDirectory("openpkw-");
-            log.info("Working directory: "+workingDirectory);
-
-            VelocityContext context = new VelocityContext();
-            context.put("form", form);
-            log.info("Form data: "+form.getSiedzibaObwodowejKomisjiWyborczej());
-            String html = velocity.process("/templates/pdf_template.html", context);
-
-            Path htmlFile = Files.createTempFile(workingDirectory, "form-", ".html");
-            Files.write(htmlFile, html.getBytes("UTF-8"));
-            copyFileToWorkingDirectory("/templates/styles.css", workingDirectory);
-            return pdfRenderer.render(htmlFile);
-        } catch (Exception ex) {
-            throw new RuntimeException("Failed to generate a PDF document: " + ex.getMessage(), ex);
-        }
-    }
 
     /**
      * Tworzy dokument PDF na podstawie szablonu HTML oraz danych z formularza
