@@ -8,6 +8,10 @@ import javax.inject.Singleton;
 
 import org.jboss.vfs.VirtualFile;
 
+/**
+ * Zwraca ścieżkę do katalogu z fontami we wnętrzu aplikacji webowej rozproszonej na JBossie.
+ * Zdaje się, że tylko JBoss wymaga takiego cudactwa.
+ */
 @Singleton
 public class FontsManager {
 

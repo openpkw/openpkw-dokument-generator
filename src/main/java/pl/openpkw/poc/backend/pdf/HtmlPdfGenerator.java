@@ -1,130 +1,93 @@
 package pl.openpkw.poc.backend.pdf;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.file.FileSystems;
+import java.io.InputStream;
 import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.Calendar;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import org.apache.log4j.Logger;
 import org.apache.velocity.VelocityContext;
-import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import pl.openpkw.poc.backend.VelocityEngine;
 import pl.openpkw.poc.backend.domain.Formularz;
 import pl.openpkw.poc.backend.rest.dto.Form;
 
-import com.lowagie.text.pdf.BaseFont;
-
 @Singleton
-public class HtmlPdfGenerator implements IPdfGenerator {
+public class HtmlPdfGenerator {
+    
+    private final static Logger log = Logger.getLogger(HtmlPdfGenerator.class);
 
     @Inject
     private VelocityEngine velocity;
 
     @Inject
-    private FontsManager fontsManager;
+    private PdfRenderer pdfRenderer;
 
+    /**
+     * Do usunięcia kiedy frontendowcy zaimplementują przesyłanie danych formularza w postaci JSON
+     */
     @Deprecated
     public byte[] generate(Formularz form) {
         try {
+            log.info("PDF generation starts");
+            
+            Path workingDirectory = Files.createTempDirectory("openpkw-");
+            log.info("Working directory: "+workingDirectory);
+
             VelocityContext context = new VelocityContext();
             context.put("form", form);
-
+            log.info("Form data: "+form.getSiedzibaObwodowejKomisjiWyborczej());
             String html = velocity.process("/templates/pdf_template.html", context);
-            File htmlFile = File.createTempFile("openpkw-" + Calendar.getInstance().getTimeInMillis(), ".html");
-            String tempDirectory = htmlFile.getParent();
-            FileOutputStream out = new FileOutputStream(htmlFile);
-            out.write(html.getBytes("UTF-8"));
-            out.close();
 
-            try {
-                Files.copy(this.getClass().getResourceAsStream("/templates/styles.css"), FileSystems.getDefault().getPath(tempDirectory + "/styles.css"), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception ex) {
-                System.out.println("Warning: Could not overwrite styles.css. This file may be obsolete.");
-            }
-
-            ByteArrayOutputStream os = new ByteArrayOutputStream();
-            ITextRenderer renderer = new ITextRenderer();
-
-            File fontsFolder = fontsManager.getFontsFolder();
-            String fontsFolderPath = fontsFolder.getAbsolutePath() + File.separatorChar;
-            String[] getFontFileNames = fontsFolder.list();
-
-            for (String fontName : getFontFileNames) {
-                String fontFullPath = fontsFolderPath + fontName;
-                System.out.println("Loading font " + fontFullPath);
-                renderer.getFontResolver().addFont(fontFullPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            }
-
-            renderer.setDocument(htmlFile);
-            renderer.layout();
-            renderer.createPDF(os);
-            os.close();
-            byte[] result = os.toByteArray();
-
-            try {
-                Files.delete(FileSystems.getDefault().getPath(tempDirectory + "/styles.css"));
-            } catch (Exception ex) {
-                System.out.println("Warning: Could not delete styles.css");
-            }
-
-            return result;
+            Path htmlFile = Files.createTempFile(workingDirectory, "form-", ".html");
+            Files.write(htmlFile, html.getBytes("UTF-8"));
+            copyFileToWorkingDirectory("/templates/styles.css", workingDirectory);
+            return pdfRenderer.render(htmlFile);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to generate a PDF document: " + ex.getMessage(), ex);
         }
     }
 
-    public byte[] generate(Form form) {
+    /**
+     * Tworzy dokument PDF na podstawie szablonu HTML oraz danych z formularza
+     */
+    public byte[] generate(Form formData) {
         try {
-            VelocityContext context = new VelocityContext();
-            context.put("form", form);
-
-            String html = velocity.process("/templates/PdfTemplate.html", context);
-            File htmlFile = File.createTempFile("openpkw-" + Calendar.getInstance().getTimeInMillis(), ".html");
-            String tempDirectory = htmlFile.getParent();
-            FileOutputStream out = new FileOutputStream(htmlFile);
-            out.write(html.getBytes("UTF-8"));
-            out.close();
-
-            try {
-                Files.copy(this.getClass().getResourceAsStream("/templates/styles.css"), FileSystems.getDefault().getPath(tempDirectory + "/styles.css"), StandardCopyOption.REPLACE_EXISTING);
-            } catch (Exception ex) {
-                System.out.println("Warning: Could not overwrite styles.css. This file may be obsolete.");
-            }
-
-            ByteArrayOutputStream os = new ByteArrayOutputStream();
-            ITextRenderer renderer = new ITextRenderer();
-
-            File fontsFolder = fontsManager.getFontsFolder();
-            String fontsFolderPath = fontsFolder.getAbsolutePath() + File.separatorChar;
-            String[] getFontFileNames = fontsFolder.list();
-
-            for (String fontName : getFontFileNames) {
-                String fontFullPath = fontsFolderPath + fontName;
-                System.out.println("Loading font " + fontFullPath);
-                renderer.getFontResolver().addFont(fontFullPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-            }
-
-            renderer.setDocument(htmlFile);
-            renderer.layout();
-            renderer.createPDF(os);
-            os.close();
-            byte[] result = os.toByteArray();
-
-            try {
-                Files.delete(FileSystems.getDefault().getPath(tempDirectory + "/styles.css"));
-            } catch (Exception ex) {
-                System.out.println("Warning: Could not delete styles.css");
-            }
-
-            return result;
+            Path workingDirectory = Files.createTempDirectory("openpkw-");
+            Path htmlFile = generateHtmlFileFromTemplate("/templates/PdfTemplate.html", formData, workingDirectory);
+            copyFileToWorkingDirectory("/templates/styles.css", workingDirectory);
+            return pdfRenderer.render(htmlFile);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to generate a PDF document: " + ex.getMessage(), ex);
+        }
+    }
+
+    private Path generateHtmlFileFromTemplate(String velocityTemplatePath, Form formData, Path workingDirectory) {
+        try {
+            VelocityContext context = new VelocityContext();
+            context.put("form", formData);
+            String html = velocity.process(velocityTemplatePath, context);
+
+            Path htmlFile = Files.createTempFile(workingDirectory, "form-", ".html");
+            Files.write(htmlFile, html.getBytes("UTF-8"));
+
+            return htmlFile;
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to render html from Velocity template: " + ex.getMessage(), ex);
+        }
+    }
+
+    private void copyFileToWorkingDirectory(String filePath, Path workingDirectory) {
+        try {
+            InputStream sourceFile = this.getClass().getResourceAsStream(filePath);
+            String targetFileName = filePath.substring(filePath.lastIndexOf("/") + 1);
+            Path targetFilePath = Paths.get(workingDirectory.toString(), targetFileName);
+            Files.copy(sourceFile, targetFilePath);
+        } catch (Exception ex) {
+            throw new RuntimeException("Failed to copy file " + filePath + " to working directory: " + ex.getMessage(), ex);
         }
     }
 }

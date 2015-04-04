@@ -22,8 +22,12 @@ import com.lowagie.text.pdf.PdfContentByte;
 import com.lowagie.text.pdf.PdfReader;
 import com.lowagie.text.pdf.PdfStamper;
 
+/**
+ * Prawdopodobnie pójdzie do śmietnika
+ */
 @Singleton
-public class StamperPdfGenerator implements IPdfGenerator {
+@Deprecated
+public class StamperPdfGenerator {
 
     @Inject
     private FontsManager fontsManager;
