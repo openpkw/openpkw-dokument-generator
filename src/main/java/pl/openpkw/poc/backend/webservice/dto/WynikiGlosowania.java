@@ -10,7 +10,7 @@ public class WynikiGlosowania {
     private String pole11;
     private String pole12;
     private String pole13;
-    private List<WynikiKandydata> pole14 = new ArrayList<WynikiKandydata>();
+    private List<WynikiKandydata> pole14 = new ArrayList<>();
     private String sumaGlosowWaznych;
 
     public String getPole9() {
