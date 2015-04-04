@@ -3,6 +3,7 @@ package pl.openpkw.poc.backend.domain;
 import pl.openpkw.poc.backend.annotations.FormElement;
 import pl.openpkw.poc.backend.annotations.RequestParameter;
 
+@Deprecated
 public class Formularz {
 
     @FormElement(page = 1, x = 194, y = 750, digits = 6, cellWidth = 20)

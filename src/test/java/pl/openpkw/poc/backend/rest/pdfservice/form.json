@@ -1,0 +1,114 @@
+{
+	"komisja": {
+		"kodTerytorialnyGminy" : "180801",
+		"numerObwoduGlosowania" : "5",
+		"siedzibaObwodowejKomisjiWyborczej": "Gimnazjum Miejskie im. Władysława Jagiełły, Leżajsk ul. Skłodowskiej 8, 37-300 Leżajsk",
+		"gminaDzielnica" : "m. Leżajsk",
+		"powiat" : "leżajski",
+		"wojewodztwo" : "podkarpackie"
+	},
+	"akcjaWyborcza": {
+	    "dataGlosowania" : "24 czerwca 2015 r.",
+	    "dzienMiesiacGlosowania" : "24 czerwca",
+	    "rokGlosowania" : "15",
+	    "godzinaGlosowaniaOd" : "9:00",
+	    "godzinaGlosowaniaDo" : "21:00"
+	},
+	"rozliczenieKart" : {
+		"pole1" : "17",
+		"pole2" : "18",
+		"pole3" : "19",
+		"pole4" : "20",
+		"pole5" : "21",
+		"pole6" : "22",
+		"pole7" : "23",
+		"pole8" : "24",
+		"pole8a" : "25",
+		"pole8b" : "26",
+		"pole8c" : "27",
+		"pole8d" : "28",
+		"pole8e" : "29"
+	},
+	"wynikiGlosowania": {
+	    "pole9" : "101",
+	    "pole9a" : "102",
+        "pole10" : "103",
+        "pole11" : "104",
+        "pole12" : "105",
+        "pole13" : "106",
+        "pole14" : [
+        	{
+        		"imionaINazwisko" : "Bronisław Komorowski",
+        		"sumaGlosowWaznych" : "901"
+        	},
+        	{
+        		"imionaINazwisko" : "Andrzej Duda",
+        		"sumaGlosowWaznych" : "902"
+        	},
+			{
+        		"imionaINazwisko" : "Magdalena Ogórek",
+        		"sumaGlosowWaznych" : "903"
+        	},
+			{
+        		"imionaINazwisko" : "Adam Jarubas",
+        		"sumaGlosowWaznych" : "904"
+        	},
+			{
+        		"imionaINazwisko" : "Janusz Palikot",
+        		"sumaGlosowWaznych" : "905"
+        	},
+			{
+        		"imionaINazwisko" : "Janusz Korwin-Mikke",
+        		"sumaGlosowWaznych" : "906"
+        	},
+			{
+        		"imionaINazwisko" : "Jacek Wilk",
+        		"sumaGlosowWaznych" : "907"
+        	},
+			{
+        		"imionaINazwisko" : "Marian Kowalski",
+        		"sumaGlosowWaznych" : "908"
+        	},
+			{
+        		"imionaINazwisko" : "Paweł Tanajno",
+        		"sumaGlosowWaznych" : "909"
+        	},
+			{
+        		"imionaINazwisko" : "Paweł Kukiz",
+        		"sumaGlosowWaznych" : "910"
+        	},
+			{
+        		"imionaINazwisko" : "Grzegorz Braun",
+        		"sumaGlosowWaznych" : "911"
+        	}
+        ],
+        "sumaGlosowWaznych" : "1024"
+	},
+	"uwagiIAdnotacje" : {
+		"pole15" : "Brak uwag.",
+		"pole16" : "Brak uwag.",
+		"pole17" : "Brak uwag.",
+		"pole18" : "Brak zarządzeń.",
+		"pole19" : "Brak zarzutów.",
+		"pole20" : "Brak zarzutów.",
+		"pole21" : "Brak uwag."
+	},
+	"czlonkowieKomisji" : [
+		{
+			"imionaINazwisko" : "Euzebiusz Szybki",
+			"funkcjaWKomisji" : "Przewodniczący komisji"
+		},
+		{
+			"imionaINazwisko" : "Anna Pękalska",
+			"funkcjaWKomisji" : "Z-ca przewodniczącego komisji"
+		},
+		{
+			"imionaINazwisko" : "Krzysztof Kajak",
+			"funkcjaWKomisji" : "Członek komisji"
+		},
+		{
+			"imionaINazwisko" : "Anita Kłos",
+			"funkcjaWKomisji" : "Członek komisji"
+		}
+	]
+}
