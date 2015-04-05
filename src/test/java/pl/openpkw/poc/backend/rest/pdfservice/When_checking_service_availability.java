@@ -15,7 +15,7 @@ public class When_checking_service_availability {
     public void should_return_OK() {
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/backend/rest/pdf");
+        WebTarget target = client.target("http://localhost:8080/backend/service/protocol");
         String response = target.request().get(String.class);
 
         assertThat(response, equalTo("OK"));

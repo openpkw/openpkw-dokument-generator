@@ -23,7 +23,7 @@ public class When_requesting_PDF_document {
     public void should_return_binary_file_with_PDF_signature() throws Exception {
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/backend/rest/pdf");
+        WebTarget target = client.target("http://localhost:8080/backend/service/protocol");
 
         String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("form.json").toURI())));
         System.out.println(form);
