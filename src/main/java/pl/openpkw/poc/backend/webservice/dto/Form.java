@@ -1,5 +1,6 @@
 package pl.openpkw.poc.backend.webservice.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Form {
@@ -9,7 +10,7 @@ public class Form {
     private RozliczenieKart rozliczenieKart;
     private WynikiGlosowania wynikiGlosowania;
     private UwagiIAdnotacje uwagiIAdnotacje;
-    private List<CzlonekKomisji> czlonkowieKomisji;
+    private List<CzlonekKomisji> czlonkowieKomisji = new ArrayList<CzlonekKomisji>();
 
     public Komisja getKomisja() {
         return komisja;
