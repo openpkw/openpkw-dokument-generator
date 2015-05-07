@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.pdf;
+package pl.openpkw.dokument.generator;
 
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -10,8 +10,7 @@ import javax.inject.Singleton;
 
 import org.apache.velocity.VelocityContext;
 
-import pl.openpkw.poc.backend.VelocityEngine;
-import pl.openpkw.poc.backend.webservice.dto.Form;
+import pl.openpkw.dokument.generator.webservice.dto.Form;
 
 
 @Singleton

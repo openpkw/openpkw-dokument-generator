@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.pdf;
+package pl.openpkw.dokument.generator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

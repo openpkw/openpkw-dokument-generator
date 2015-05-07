@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.webservice.dto;
+package pl.openpkw.dokument.generator.webservice.dto;
 
 public class WynikiKandydata {
 

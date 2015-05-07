@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.rest.pdfservice;
+package pl.openpkw.dokument.generator.webservice;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
@@ -23,9 +23,9 @@ public class When_requesting_PDF_document {
     public void should_return_binary_file_with_PDF_signature() throws Exception {
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/backend/service/protocol");
+        WebTarget target = client.target("http://localhost:8080/openpkw-dokument-generator/service/protocol");
 
-        String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("form.json").toURI())));
+        String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/form.json").toURI())));
         System.out.println(form);
 
         byte[] response = target.request().post(Entity.entity(form, MediaType.APPLICATION_JSON), byte[].class);
