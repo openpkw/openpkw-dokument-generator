@@ -1,0 +1,12 @@
+{
+    "kodTerytorialnyGminy":"${form.komisja.kodTerytorialnyGminy}",
+    "nrObwoduGlosowania":"${form.komisja.numerObwoduGlosowania}",  
+    "glosowWaznych":${form.wynikiGlosowania.pole13},
+    "glosujacych":${form.wynikiGlosowania.pole9},
+#foreach($kandydat in $form.wynikiGlosowania.pole14)
+    "k${velocityCount}":${kandydat.sumaGlosowWaznych},
+#end
+    "glosowNieWaznych":${form.wynikiGlosowania.pole12},
+    "kartWaznych":${form.wynikiGlosowania.pole11},
+    "uprawnionych":${form.rozliczenieKart.pole1}
+}

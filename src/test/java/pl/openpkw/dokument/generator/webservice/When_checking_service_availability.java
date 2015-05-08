@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.rest.pdfservice;
+package pl.openpkw.dokument.generator.webservice;
 
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
@@ -15,7 +15,7 @@ public class When_checking_service_availability {
     public void should_return_OK() {
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/backend/service/protocol");
+        WebTarget target = client.target("http://localhost:8080/openpkw-dokument-generator/service/protocol");
         String response = target.request().get(String.class);
 
         assertThat(response, equalTo("OK"));

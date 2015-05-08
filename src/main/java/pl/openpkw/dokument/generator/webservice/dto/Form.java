@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.webservice.dto;
+package pl.openpkw.dokument.generator.webservice.dto;
 
 import java.util.ArrayList;
 import java.util.List;

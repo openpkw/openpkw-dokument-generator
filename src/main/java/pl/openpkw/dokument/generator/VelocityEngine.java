@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend;
+package pl.openpkw.dokument.generator;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
@@ -21,6 +21,9 @@ public class VelocityEngine {
         velocityProperties.setProperty("resource.loader", "classpath");
         velocityProperties.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
         velocityProperties.setProperty("input.encoding", "UTF-8");
+        velocityProperties.setProperty("runtime.log.logsystem.class", "org.apache.velocity.runtime.log.SimpleLog4JLogSystem");
+        velocityProperties.setProperty("runtime.log.logsystem.log4j.category", "velocity");
+        velocityProperties.setProperty("runtime.log.logsystem.log4j.logger", "velocity");
         Velocity.init(velocityProperties);
     }
 
@@ -34,7 +37,7 @@ public class VelocityEngine {
             String result = new String(out.toByteArray(), "UTF-8");
             return result;
         } catch (Exception ex) {
-            throw new RuntimeException("Failed to process a Velocity template: " + ex.getMessage(), ex);
+            throw new RuntimeException("Failed to process a Velocity template "+templateName+": " + ex.getMessage(), ex);
         }
     }
 }

@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.webservice;
+package pl.openpkw.dokument.generator.webservice;
 
 import java.util.Set;
 import javax.ws.rs.ApplicationPath;
@@ -15,6 +15,6 @@ public class RestApplication extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(pl.openpkw.poc.backend.webservice.ProtocolService.class);
+        resources.add(pl.openpkw.dokument.generator.webservice.ProtocolService.class);
     }
 }

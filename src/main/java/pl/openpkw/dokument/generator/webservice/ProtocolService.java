@@ -1,4 +1,4 @@
-package pl.openpkw.poc.backend.webservice;
+package pl.openpkw.dokument.generator.webservice;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -9,8 +9,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import pl.openpkw.poc.backend.pdf.HtmlPdfGenerator;
-import pl.openpkw.poc.backend.webservice.dto.Form;
+import pl.openpkw.dokument.generator.HtmlPdfGenerator;
+import pl.openpkw.dokument.generator.webservice.dto.Form;
 
 /**
  * Represents Protokol kalkulatora wyborczego. 
