@@ -12,6 +12,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 public class ManualTest {
+    
+    public final static String LOCAL = "localhost:8080";
+    public final static String DEV = "dobromir.openpkw.pl:9080";
 
     public static void main(String[] args) {
         new ManualTest().run();
@@ -20,7 +23,8 @@ public class ManualTest {
     public void run() {
         try {
             Client client = ClientBuilder.newClient();
-            WebTarget target = client.target("http://localhost:8080/openpkw-dokument-generator/service/protocol");
+            String env = DEV;
+            WebTarget target = client.target("http://"+env+"/openpkw-dokument-generator/service/protocol");
 
             String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/form.json").toURI())));
             System.out.println(form);
@@ -33,7 +37,6 @@ public class ManualTest {
             if (outputFile.exists()) {
                 outputFile.delete();
             }
-
             
             FileOutputStream outputFileStream = new FileOutputStream(outputFile);
             outputFileStream.write(response);
