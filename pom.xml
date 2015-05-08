@@ -26,8 +26,8 @@
 			<properties>
 				<jboss.management.host>localhost</jboss.management.host>
 				<jboss.management.port>9999</jboss.management.port>
-				<jboss.management.user>go</jboss.management.user>
-				<jboss.management.password>ke734efjwEK</jboss.management.password>
+				<jboss.management.user>jenkins</jboss.management.user>
+				<jboss.management.password></jboss.management.password>
 			</properties>
 		</profile>
 		<profile>
@@ -39,16 +39,16 @@
 				</property>
 			</activation>
 			<properties>
-				<jboss.management.host>52.1.164.93</jboss.management.host>
+				<jboss.management.host>dobromir.openpkw.pl</jboss.management.host>
 				<jboss.management.port>9999</jboss.management.port>
-				<jboss.management.user>go</jboss.management.user>
-				<jboss.management.password>ke734efjwEK</jboss.management.password>
+				<jboss.management.user>jenkins</jboss.management.user>
+				<jboss.management.password></jboss.management.password>
 			</properties>
 		</profile>
 	</profiles>
 
 	<build>
-		<finalName>openpkw</finalName>
+		<finalName>openpkw-dokument-generator</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -75,7 +75,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 	<dependencies>
 		<dependency>
