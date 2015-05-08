@@ -22,21 +22,21 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
 @Singleton
 public class QRCodeGenerator {
-    
+
     @Inject
     private VelocityEngine velocity;
-    
+
     public String createJsonDataForQRCode(Form formData) {
         try {
             VelocityContext context = new VelocityContext();
             context.put("form", formData);
-            String json = velocity.process("/templates/QrCodeJsonTemplate.json", context);
+            String json = velocity.process("/templates/QRCodeJsonTemplate.json", context);
             return json;
         } catch (Exception ex) {
             throw new RuntimeException("Failed to create json data from Velocity template: " + ex.getMessage(), ex);
         }
     }
-    
+
     public byte[] generate(String input) {
         int size = 125;
         String fileType = "jpeg";
@@ -45,19 +45,21 @@ public class QRCodeGenerator {
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
             QRCodeWriter qrCodeWriter = new QRCodeWriter();
             BitMatrix byteMatrix = qrCodeWriter.encode(input, BarcodeFormat.QR_CODE, size, size, hintMap);
-            int CrunchifyWidth = byteMatrix.getWidth();
-            BufferedImage image = new BufferedImage(CrunchifyWidth, CrunchifyWidth, BufferedImage.TYPE_INT_RGB);
+            int crunchifyWidth = byteMatrix.getWidth();
+            int scale = 4;
+
+            BufferedImage image = new BufferedImage(crunchifyWidth * scale, crunchifyWidth * scale, BufferedImage.TYPE_INT_RGB);
             image.createGraphics();
 
             Graphics2D graphics = (Graphics2D) image.getGraphics();
             graphics.setColor(Color.WHITE);
-            graphics.fillRect(0, 0, CrunchifyWidth, CrunchifyWidth);
+            graphics.fillRect(0, 0, crunchifyWidth * scale, crunchifyWidth * scale);
             graphics.setColor(Color.BLACK);
 
-            for (int i = 0; i < CrunchifyWidth; i++) {
-                for (int j = 0; j < CrunchifyWidth; j++) {
+            for (int i = 0; i < crunchifyWidth; i++) {
+                for (int j = 0; j < crunchifyWidth; j++) {
                     if (byteMatrix.get(i, j)) {
-                        graphics.fillRect(i, j, 1, 1);
+                        graphics.fillRect(i * scale, j * scale, scale, scale);
                     }
                 }
             }
@@ -70,5 +72,4 @@ public class QRCodeGenerator {
             throw new RuntimeException("Failed to generate QR code: " + ex.getMessage());
         }
     }
-
 }
