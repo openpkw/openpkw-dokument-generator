@@ -12,3 +12,19 @@ Serwis wchodzcy w skład systemu OpenPKW, odpowiedzialny za generowanie dokument
 * Wszystkie zadania: [Trello](https://trello.com/b/6TXJgOO5/openpkw-dokument-generator)
 * [DG-U-1](https://trello.com/c/oEnZ2qYk) Generowanie protokolu komisji obwodowej
 * [DG-U-2](https://trello.com/c/MjttfXoa) Kody QR zawierajace podstawowe informacje protokolu
+
+## Jak zbudować projekt?
+mvn clean install
+
+## Jak rozproszyć projekt na środowisku lokalnym?
+* Zainstalować serwer JBoss
+* Utworzyć użytkownika administracyjnego o nazwie 'jenkins' i wybranym haśle
+* Wykonać komendę mvn jboss-as:deploy -Dopenpkw-env=local -Djboss.management.password=[tutaj wpisać hasło]
+
+## Jak rozproszyć projekt na środowisku DEV?
+* Trzeba znać hasło użytkownika 'jenkins' na serwerze JBoss w środowisku DEV
+* Wykonać komendę mvn jboss-as:deploy -Dopenpkw-env=dev -Djboss.management.password=[tutaj wpisać hasło]
+
+## Jak przetestować czy aplikacja rozproszona jest poprawnie?
+* Sprawdzenie czy aplikacja webowa działa: http://[nazwa_serwera]:[port]/openpkw-dokument-generator
+* Sprawdzanie czy działa web serwis: http://[nazwa_serwera]:[port]/openpkw-dokument-generator/service/protocol
