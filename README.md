@@ -3,7 +3,7 @@
 Serwis wchodzcy w skład systemu OpenPKW, odpowiedzialny za generowanie dokumentów.
 
 ## Środowiska
-* Continuous Delivery: brak
+* Continuous Delivery: http://dobromir.openpkw.pl:8080/view/openpkw-dokument-generator%20pipeline/
 * DEV: http://dobromir.openpkw.pl:9080/openpkw-dokument-generator
 * UAT: brak
 * PROD: brak
