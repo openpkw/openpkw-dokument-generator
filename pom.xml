@@ -31,6 +31,21 @@
 			</properties>
 		</profile>
 		<profile>
+			<id>VAGRANT</id>
+			<activation>
+				<property>
+					<name>openpkw-env</name>
+					<value>vagrant</value>
+				</property>
+			</activation>
+			<properties>
+				<jboss.management.host>localhost</jboss.management.host>
+				<jboss.management.port>4502</jboss.management.port>
+				<jboss.management.user>jenkins</jboss.management.user>
+				<jboss.management.password></jboss.management.password>
+			</properties>
+		</profile>
+		<profile>
 			<id>DEV</id>
 			<activation>
 				<property>
