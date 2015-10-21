@@ -4,7 +4,7 @@
 	<groupId>pl.openpkw</groupId>
 	<artifactId>dokument-generator</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 
 	<name>OpenPKW POC Backend</name>
 	<url>http://openpkw.org</url>
@@ -14,54 +14,54 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<profiles>
-		<profile>
-			<id>LOCAL</id>
-			<activation>
-				<property>
-					<name>openpkw-env</name>
-					<value>local</value>
-				</property>
-			</activation>
-			<properties>
-				<jboss.management.host>localhost</jboss.management.host>
-				<jboss.management.port>9999</jboss.management.port>
-				<jboss.management.user>jenkins</jboss.management.user>
-				<jboss.management.password></jboss.management.password>
-			</properties>
-		</profile>
-		<profile>
-			<id>VAGRANT</id>
-			<activation>
-				<property>
-					<name>openpkw-env</name>
-					<value>vagrant</value>
-				</property>
-			</activation>
-			<properties>
-				<jboss.management.host>localhost</jboss.management.host>
-				<jboss.management.port>4502</jboss.management.port>
-				<jboss.management.user>jenkins</jboss.management.user>
-				<jboss.management.password></jboss.management.password>
-			</properties>
-		</profile>
-		<profile>
-			<id>DEV</id>
-			<activation>
-				<property>
-					<name>openpkw-env</name>
-					<value>dev</value>
-				</property>
-			</activation>
-			<properties>
-				<jboss.management.host>dobromir.openpkw.pl</jboss.management.host>
-				<jboss.management.port>9999</jboss.management.port>
-				<jboss.management.user>jenkins</jboss.management.user>
-				<jboss.management.password></jboss.management.password>
-			</properties>
-		</profile>
-	</profiles>
-
+  <profiles>
+        <profile>
+            <id>LOCAL</id>
+            <activation>
+                <property>
+                    <name>openpkw-env</name>
+                    <value>local</value>
+                </property>
+            </activation>
+            <properties>
+                <wildfly.management.host>localhost</wildfly.management.host>
+                <wildfly.management.port>9999</wildfly.management.port>
+                <wildfly.management.user>jenkins</wildfly.management.user>
+                <wildfly.management.password></wildfly.management.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>VAGRANT</id>
+            <activation>
+                <property>
+                    <name>openpkw-env</name>
+                    <value>vagrant</value>
+                </property>
+            </activation>
+            <properties>
+                <wildfly.management.host>localhost</wildfly.management.host>
+                <wildfly.management.port>4502</wildfly.management.port>
+                <wildfly.management.user>jenkins</wildfly.management.user>
+                <wildfly.management.password></wildfly.management.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>DEV</id>
+            <activation>
+                <property>
+                    <name>openpkw-env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+            <properties>
+                <wildfly.management.host>dobromir.openpkw.pl</wildfly.management.host>
+                <wildfly.management.port>9999</wildfly.management.port>
+                <wildfly.management.user>jenkins</wildfly.management.user>
+                <wildfly.management.password></wildfly.management.password>
+            </properties>
+        </profile>
+    </profiles>
+	
 	<build>
 		<finalName>openpkw-dokument-generator</finalName>
 		<plugins>
@@ -70,24 +70,24 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<compilerArguments>
 						<endorseddirs>${endorsed.dir}</endorseddirs>
 					</compilerArguments>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.3.Final</version>
-				<configuration>
-					<hostname>${jboss.management.host}</hostname>
-					<port>${jboss.management.port}</port>
-					<username>${jboss.management.user}</username>
-					<password>${jboss.management.password}</password>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.1.0.Alpha4</version>
+                <configuration>
+                    <hostname>${wildfly.management.host}</hostname>
+                    <port>${wildfly.management.port}</port>
+                    <username>${wildfly.management.user}</username>
+                    <password>${wildfly.management.password}</password>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -166,4 +166,12 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+    
+    <pluginRepositories>
+        <pluginRepository>
+            <id>JBoss Repository</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+    
 </project>

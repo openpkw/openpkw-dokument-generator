@@ -1,5 +1,7 @@
 package pl.openpkw.dokument.generator.webservice;
 
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -9,11 +11,11 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import pl.openpkw.dokument.generator.DokumentGeneratorException;
 import pl.openpkw.dokument.generator.HtmlPdfGenerator;
-import pl.openpkw.dokument.generator.webservice.dto.Form;
 
 /**
- * Represents Protokol kalkulatora wyborczego. 
+ * Represents Protokol kalkulatora wyborczego.
  * 
  * 
  */
@@ -27,7 +29,7 @@ public class ProtocolService {
     @Path("/version")
     @Produces(MediaType.TEXT_PLAIN)
     public String getVersion() {
-        return "1.0.0-SNAPSHOT ToDo";
+        return "1.1.0";
     }
 
     @GET
@@ -39,8 +41,12 @@ public class ProtocolService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("application/pdf")
-    public Response generatePDF(Form form) {
-        byte[] pdfDocument = pdfGenerator.generate(form);
-        return Response.ok(pdfDocument).build();
+    public Response generatePDF(Map<Object, Object> form) {
+        try {
+            byte[] pdfDocument = pdfGenerator.generate(form);
+            return Response.ok(pdfDocument).build();
+        } catch (DokumentGeneratorException ex) {
+            return Response.status(400).entity("{\"ErrorCode\":\""+ex.getError().getErrorCode()+"\",\"ErrorMessage\":\""+ex.getError().getErrorMessage()+"\"}").type(MediaType.APPLICATION_JSON).build();
+        }
     }
 }

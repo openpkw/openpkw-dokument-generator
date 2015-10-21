@@ -5,60 +5,75 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.apache.velocity.VelocityContext;
 
-import pl.openpkw.dokument.generator.webservice.dto.Form;
-
 @Singleton
 public class HtmlPdfGenerator {
 
-    @Inject
-    private VelocityEngine velocity;
+    private VelocityEngine velocityEngine;
 
-    @Inject
     private PdfRenderer pdfRenderer;
 
-    @Inject
     private QRCodeGenerator qrCodeGenerator;
+
+    private RequestValidator requestValidator;
+
+    @Inject
+    public HtmlPdfGenerator(VelocityEngine velocityEngine, PdfRenderer pdfRenderer, QRCodeGenerator qrCodeGenerator, RequestValidator requestValidator) {
+        this.velocityEngine = velocityEngine;
+        this.pdfRenderer = pdfRenderer;
+        this.qrCodeGenerator = qrCodeGenerator;
+        this.requestValidator = requestValidator;
+    }
 
     /**
      * Tworzy dokument PDF na podstawie szablonu HTML oraz danych z formularza
      */
-    public byte[] generate(Form formData) {
+    public byte[] generate(Map<Object, Object> request) {
+        requestValidator.validate(request);
         try {
+            String templateName = (String) request.get("templateName");
+            Map<Object, Object> formData = (Map<Object, Object>) request.get("formData");
+
+            String templateFile = "/templates/" + templateName + ".html";
             Path workingDirectory = Files.createTempDirectory("openpkw-");
-            Path htmlFile = generateHtmlFileFromTemplate("/templates/PdfTemplate.html", formData, workingDirectory);
+            Path htmlFile = generateHtmlFileFromTemplate(templateFile, formData, workingDirectory);
 
             byte[] qrCode = generateQRCodeFromFormData(formData);
             saveFileInWorkingDirectory("qrcode.jpeg", workingDirectory, qrCode);
 
             copyFileToWorkingDirectory("/templates/styles.css", workingDirectory);
             return pdfRenderer.render(htmlFile);
+        } catch (DokumentGeneratorException ex) {
+            throw ex;
         } catch (Exception ex) {
             throw new RuntimeException("Failed to generate a PDF document: " + ex.getMessage(), ex);
         }
     }
 
-    private Path generateHtmlFileFromTemplate(String velocityTemplatePath, Form formData, Path workingDirectory) {
+    private Path generateHtmlFileFromTemplate(String velocityTemplatePath, Map<Object, Object> formData, Path workingDirectory) {
         try {
             VelocityContext context = new VelocityContext();
             context.put("form", formData);
-            String html = velocity.process(velocityTemplatePath, context);
+            String html = velocityEngine.process(velocityTemplatePath, context);
 
             Path htmlFile = Files.createTempFile(workingDirectory, "form-", ".html");
             Files.write(htmlFile, html.getBytes("UTF-8"));
 
             return htmlFile;
+        } catch (DokumentGeneratorException ex) {
+            throw ex;
         } catch (Exception ex) {
             throw new RuntimeException("Failed to render html from Velocity template: " + ex.getMessage(), ex);
         }
     }
 
-    private byte[] generateQRCodeFromFormData(Form formData) {
+    private byte[] generateQRCodeFromFormData(Map<Object, Object> formData) {
         String jsonData = qrCodeGenerator.createJsonDataForQRCode(formData);
         return qrCodeGenerator.generate(jsonData);
     }
