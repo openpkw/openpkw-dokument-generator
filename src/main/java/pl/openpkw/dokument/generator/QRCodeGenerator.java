@@ -5,14 +5,13 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.Hashtable;
+import java.util.Map;
 
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.apache.velocity.VelocityContext;
-
-import pl.openpkw.dokument.generator.webservice.dto.Form;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -26,7 +25,7 @@ public class QRCodeGenerator {
     @Inject
     private VelocityEngine velocity;
 
-    public String createJsonDataForQRCode(Form formData) {
+    public String createJsonDataForQRCode(Map formData) {
         try {
             VelocityContext context = new VelocityContext();
             context.put("form", formData);

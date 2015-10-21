@@ -10,6 +10,7 @@ import javax.inject.Singleton;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
+import org.apache.velocity.exception.ResourceNotFoundException;
 import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 @Singleton
@@ -36,6 +37,9 @@ public class VelocityEngine {
             outWriter.close();
             String result = new String(out.toByteArray(), "UTF-8");
             return result;
+        } catch (ResourceNotFoundException ex) {
+            ex.printStackTrace();
+            throw new DokumentGeneratorException(DokumentGeneratorError.TEMPLATE_NOT_FOUND); 
         } catch (Exception ex) {
             throw new RuntimeException("Failed to process a Velocity template "+templateName+": " + ex.getMessage(), ex);
         }
