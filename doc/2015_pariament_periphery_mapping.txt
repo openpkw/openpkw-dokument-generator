@@ -1,0 +1,60 @@
+kod terytorialny gminy - results.territorialCode
+nr obwodu głosowania - results.peripheryNumber
+siedziba Obwodowej Komisji Wyborczej (adres)
+gmina/dzielnica
+powiat
+województwo
+okręg wyborczy nr
+Okręgowa Komisja Wyborcza w
+
+Dzień i miesiąc głosowania
+Rok glosowania
+Godzina rozpoczęcia głosowania
+Godzina zakończenia głosowania
+
+1. Liczba wyborców uprawnionych do głosowania
+2. Komisja otrzymała kart do głosowania
+3. Nie wykorzystano kart do głosowania
+4. Liczba wyborców, którym wydano karty do głosowania
+5. Liczba wyborców głosujących przez pełnomocnika
+6. Liczba wyborców głosujących na podstawie zaświadczenia o prawie do głosowania
+7. Liczba wyborców, którym wysłano pakiety wyborcze - results.correspondenceVoting.issuedPackages
+8. Liczba otrzymanych kopert zwrotnych  - results.correspondenceVoting.receivedReplyEnvelopes
+8a. Liczba kopert zwrotnych, w których nie było oświadczenia o osobistym i tajnym oddaniu głosu -results.correspondenceVoting. missingStatement
+8b. Liczba kopert zwrotnych, w których oświadczenie nie było podpisane przez wyborcę - results.correspondenceVoting.missingSignatureOnStatement
+8c. Liczba kopert zwrotnych, w których nie było koperty na karty do głosowania - results.correspondenceVoting.missingEnvelopeForVotingCard
+8d. Liczba kopert zwrotnych, w których znajdowała się niezaklejona koperta na karty do głosowania - results.correspondenceVoting.unsealedEnvelope
+8e. Liczba kopert na karty do głosowania wrzuconych do urny - results.correspondenceVoting.envelopesThrownToBallotBox
+
+9. Liczba kart wyjętych z urny - results.votingCards.cardsFromBallotBox
+9a. w tym liczba kart wyjętych z kopert na karty do głosowania - results.votingCards.cardsFromEnvelopes
+
+10. Liczba kart nieważnych - results.votingCards.invalidCards
+11. Liczba kart ważnych - results.votingCards.validCards
+
+12. Liczba głosów nieważnych (z kart ważnych) - results.votingCards.invalidVotes
+12a. w tym z powodu postawienia znaku „X” obok nazwiska dwóch lub większej liczby kandydatów z różnych list
+12b. w tym z powodu niepostawienia znaku „X” obok nazwiska żadnego kandydata z którejkolwiek z list
+12c. w tym z powodu postawienia znaku „X” wyłącznie obok nazwiska kandydata z listy, której rejestracja została unieważniona (art. 227 § 3 Kodeksu)
+13. Liczba głosów ważnych oddanych łącznie na wszystkie listy kandydatów (z kart ważnych) - results.votingCards.validVotes
+
+
+
+14:
+- nr listy
+- oznaczenie listy nazwą lub skrótem nazwy komitetu wyborczego - results.committeesList.committeeName
+- liczba oddanych głosów na listę - results.committeesList.committeeVotesNumber
+
+- nazwisko kandydata - results.committeesList.candidateName
+- liczba głosów ważnych oddanych na kandydata results.committeesList.candidateVotesNumber
+- razem
+
+15. Uwagi o przypuszczalnej przyczynie różnicy pomiędzy sumą liczb z pkt. 3 i 4 a liczbą z pkt. 2
+16. Uwagi o przypuszczalnej przyczynie różnicy pomiędzy liczbą z pkt. 9 pomniejszoną o liczbę z pkt. 9a a liczbą z pkt. 4, a także o przypuszczalnej przyczynie ewentualnej różnicy pomiędzy liczbą z pkt. 9a a liczbą z pkt. 8e
+17. Uwagi o przypuszczalnej przyczynie wystąpienia kart nieważnych (pkt 10)
+18. W trakcie głosowania wydano następujące zarządzenia
+19. Adnotacja o wniesieniu uwag przez mężów zaufania z wymienieniem konkretnych zarzutów
+20. Adnotacja o wniesieniu uwag przez członków Komisji z wymienieniem konkretnych zarzutów
+21. Inne uwagi
+
+- imiona i nazwiska członka komisji
