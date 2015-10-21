@@ -15,9 +15,9 @@
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: right">Kod terytorialny gminy<br/>(dzielnicy w m. st. Warszawie)</td>
-			<td>${form.commission.territorialCode}</td>
+			<td>${form.results.territorialCode}</td>
 			<td colspan="2" style="text-align:right">Nr obwodu głosowania</td>
-			<td>${form.commission.peripheryNumber}</td>
+			<td>${form.results.peripheryNumber}</td>
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: right">Siedziba Obwodowej Komisji Wyborczej (adres)</td>
@@ -85,37 +85,37 @@
 		<tr>
 			<td class="lp">7.</td>
 			<td>Liczba wyborców, którym wysłano pakiety wyborcze</td>
-			<td>${form.rozliczenieKart.pole7}</td>
+			<td>${form.results.correspondenceVoting.issuedPackages}</td>
 		</tr>
 		<tr>
 			<td class="lp">8.</td>
 			<td>Liczba otrzymanych kopert zwrotnych</td>
-			<td>${form.rozliczenieKart.pole8}</td>
+			<td>${form.results.correspondenceVoting.receivedReplyEnvelopes}</td>
 		</tr>
 		<tr>
 			<td class="lp">8a.</td>
 			<td>Liczba kopert zwrotnych, w których nie było oświadczenia o osobistym i tajnym oddaniu głosu</td>
-			<td>${form.rozliczenieKart.pole8a}</td>
+			<td>${form.results.correspondenceVoting.missingStatement}</td>
 		</tr>
 		<tr>
 			<td class="lp">8b.</td>
 			<td>Liczba kopert zwrotnych, w których oświadczenie nie było podpisane przez wyborcę</td>
-			<td>${form.rozliczenieKart.pole8b}</td>
+			<td>${form.results.correspondenceVoting.missingSignatureOnStatement}</td>
 		</tr>
 		<tr>
 			<td class="lp">8c.</td>
 			<td>Liczba kopert zwrotnych, w których nie było koperty na kartę do głosowania</td>
-			<td>${form.rozliczenieKart.pole8c}</td>
+			<td>${form.results.correspondenceVoting.missingEnvelopeForVotingCard}</td>
 		</tr>
 		<tr>
 			<td class="lp">8d.</td>
 			<td>Liczba kopert zwrotnych, w których znajdowała się niezaklejona koperta na kartę do głosowania</td>
-			<td>${form.rozliczenieKart.pole8d}</td>
+			<td>${form.results.correspondenceVoting.unsealedEnvelope}</td>
 		</tr>
 		<tr>
 			<td class="lp">8e.</td>
 			<td>Liczba kopert na kartę do głosowania wrzuconych do urny</td>
-			<td>${form.rozliczenieKart.pole8e}</td>
+			<td>${form.results.correspondenceVoting.envelopesThrownToBallotBox}</td>
 		</tr>
 		<tr class="uwaga">
 			<td colspan="3"><b>Uwaga!</b> Liczba z pkt. 8 nie może być większa od liczby z pkt. 7. Suma liczba z pkt. 8a–8e nie może być większa od liczby z pkt. 8.</td>
@@ -129,12 +129,12 @@
 		<tr>
 			<td class="lp" style="width: 20px">9.</td>
 			<td>Liczba kart wyjętych z urny</td>
-			<td style="width: 100px">${form.wynikiGlosowania.pole9}</td>
+			<td style="width: 100px">${form.results.votingCards.cardsFromBallotBox}</td>
 		</tr>
 		<tr>
 			<td class="lp">9a.</td>
 			<td>w tym liczba kart wyjętych z kopert na kartę do głosowania</td>
-			<td>${form.wynikiGlosowania.pole9a}</td>
+			<td>${form.results.votingCards.cardsFromEnvelopes}</td>
 		</tr>
 		<tr class="uwaga">
 			<td colspan="3"><b>Uwaga!</b> Liczba z pkt. 9 pomniejszona o liczbę z pkt. 9a powinna być równa liczbie z pkt. 4. Dodatkowo liczba z pkt. 9a nie powinna być większa od liczby z pkt. 8e; jeśli tak nie jest &mdash; przypuszczalną przyczynę należy opisać w punkcie 16.</td>
@@ -142,12 +142,12 @@
 		<tr>
 			<td class="lp">10.</td>
 			<td>Liczba kart nieważnych <i>(innych niż urzędowo ustalone lub nieopatrzonych pieczęcią obwodowej komisji wyborczej)</i></td>
-			<td>${form.wynikiGlosowania.pole10}</td>
+			<td>${form.results.votingCards.invalidCards}</td>
 		</tr>
 		<tr>
 			<td class="lp">11.</td>
 			<td>Liczba kart ważnych</td>
-			<td>${form.wynikiGlosowania.pole11}</td>
+			<td>${form.results.votingCards.validCards}</td>
 		</tr>
 		<tr class="uwaga">
 			<td colspan="3"><b>Uwaga!</b> Suma liczb z pkt. 10 i 11 <b>musi</b> być równa liczbie z pkt. 9. Jeśli w pkt. 10 liczba jest większa niż 0, przyczynę należy opisać w pkt. 17.</td>
@@ -155,12 +155,12 @@
 		<tr>
 			<td class="lp">12.</td>
 			<td>Liczba głosów nieważnych <i>(z kart ważnych)</i></td>
-			<td>${form.wynikiGlosowania.pole12}</td>
+			<td>${form.results.votingCards.invalidVotes}</td>
 		</tr>
 		<tr>
 			<td class="lp">13.</td>
-			<td>Liczba głosów ważnych oddanych łącznie na wszystkich kandydatów <i>(z kart ważnych)</i></td>
-			<td>${form.wynikiGlosowania.pole13}</td>
+			<td>Liczba głosów ważnych oddanych łącznie na wszystkie listy kandydatów <i>(z kart ważnych)</i></td>
+			<td>${form.results.votingCards.validVotes}</td>
 		</tr>
 		<tr class="uwaga">
 			<td colspan="3"><b>Uwaga!</b> Suma liczb z pkt. 12 i 13 <b>musi</b> być równa liczbie z pkt. 11.</td>
