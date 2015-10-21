@@ -158,6 +158,21 @@
 			<td>${form.results.votingCards.invalidVotes}</td>
 		</tr>
 		<tr>
+			<td class="lp">12a.</td>
+			<td>w tym z powodu postawienia znaku &#8222;X&#8221; obok nazwiska dwóch lub większej liczby kandydatów z różnych list</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="lp">12b.</td>
+			<td>w tym z powodu niepostawienia znaku &#8222;X&#8221; obok nazwiska żadnego kandydata z którejkolwiek z list</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="lp">12c.</td>
+			<td>w tym z powodu postawienia znaku &#8222;X&#8221; wyłącznie obok nazwiska kandydata z listy, której rejestracja została unieważniona (art. 227 &sect; 3 Kodeksu)</td>
+			<td></td>
+		</tr>
+		<tr>
 			<td class="lp">13.</td>
 			<td>Liczba głosów ważnych oddanych łącznie na wszystkie listy kandydatów <i>(z kart ważnych)</i></td>
 			<td>${form.results.votingCards.validVotes}</td>
@@ -167,13 +182,17 @@
 		</tr>
 	</table>		
 
-	<h4>14. Na poszczególnych kandydatów na Prezydenta Rzeczypospolitej Polskiej oddano następujące liczby głosów ważnych:</h4>
+	<h4>14. Na poszczególne listy kandydatów na posłów i umieszczonych na nich kandydatów na posłów oddano następujące liczby głosów ważnych:</h4>
+	#foreach($committee in $form.results.committeesList)
+	<p>Lista nr &ellip; &mdash; ${committee.committeeName}</p>
+	<p>Liczba głosów ważnych oddanych na listę: ${committee.committeeVotesNumber}</p>
+	
 	<table class="with_borders">
-		#foreach($wynikiKandydata in $form.wynikiGlosowania.pole14)
+		#foreach($candidate in $committee.candidate)
 		<tr>
 			<td class="lp" style="width:20px">${velocityCount}.</td>
-			<td>${wynikiKandydata.imionaINazwisko}</td>
-			<td style="width: 100px">${wynikiKandydata.sumaGlosowWaznych}</td>
+			<td>${candidate.candidateName}</td>
+			<td style="width: 100px">${candidate.candidateVotesNumber}</td>
 		</tr>
 		#end
 		<tr>
@@ -182,6 +201,7 @@
 			<td>${form.wynikiGlosowania.sumaGlosowWaznych}</td>
 		</tr>
 	</table>	
+	#end
 
 	<p class="uwaga"><b>Uwaga!</b> Suma głosów oddanych na wszystkich kandydatów (rubryka ,,Razem'') <b>musi</b> być równa liczbie z pkt. 13, czyli liczbie głosów ważnych oddanych łącznie na wszystkich kandydatów.</p>
 
