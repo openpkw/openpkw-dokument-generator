@@ -10,39 +10,49 @@
 
 <form>
 	<table class="with_borders">
+		<col width="7%"></col>
+		<col width="12%"></col>
+		<col width="8%"></col>
+		<col width="4%"></col>
+		<col width="7%"></col>
+		<col width="14%"></col>
+		<col width="8%"></col>
+		<col width="11%"></col>
+		<col width="13%"></col>
+		<col width="16%"></col>
 		<tr>
-			<td colspan="6"><h2>Wybory do Sejmu Rzeczypospolitej Polskiej zarządzone na dzień</h2></td>
+			<td colspan="10"><h2>Wybory do Sejmu Rzeczypospolitej Polskiej zarządzone na dzień</h2></td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: right">Kod terytorialny gminy<br/>(dzielnicy w m. st. Warszawie)</td>
-			<td>${form.results.territorialCode}</td>
-			<td colspan="2" style="text-align:right">Nr obwodu głosowania</td>
-			<td>${form.results.peripheryNumber}</td>
+			<td colspan="3" style="text-align: right">Kod terytorialny gminy<br/>(dzielnicy w m. st. Warszawie)</td>
+			<td colspan="3">${form.results.territorialCode}</td>
+			<td colspan="3" style="text-align:right">Nr obwodu głosowania</td>
+			<td colspan="1">${form.results.peripheryNumber}</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: right">Siedziba Obwodowej Komisji Wyborczej (adres)</td>
-			<td colspan="4">${form.commission.address}</td>
+			<td colspan="4" style="text-align: right">Siedziba Obwodowej Komisji Wyborczej (adres)</td>
+			<td colspan="6">${form.results.peripheralCommissionAddress}</td>
 		</tr>
 		<tr>
-			<td style="text-align: right">Gmina/Dzielnica</td>
-			<td>${form.commission.communeName}</td>
-			<td style="text-align: right">Powiat</td>
-			<td>${form.commission.countyName}</td>
-			<td style="text-align: right">Województwo</td>
-			<td>${form.commission.provinceName}</td>
+			<td colspan="1" style="text-align: right">Gmina/<br/>Dzielnica</td>
+			<td colspan="3">${form.results.commune}</td>
+			<td colspan="1" style="text-align: right">Powiat</td>
+			<td colspan="2">${form.results.county}</td>
+			<td colspan="1" style="text-align: right">Województwo</td>
+			<td colspan="2">${form.results.province}</td>
 		</tr>
 		<tr>
-			<td>Okręg wyborczy nr</td>
-			<td>${form.commission.districtNumber}</td>
-			<td>Okręgowa Komisja Wyborcza w</td>
-			<td colspan="3">${form.commission.commissionNumber}</td>
+			<td colspan="2">Okręg wyborczy nr</td>
+			<td colspan="1">${form.results.districtNumber}</td>
+			<td colspan="4">Okręgowa Komisja Wyborcza w</td>
+			<td colspan="3">${form.results.districtCommissionAddress}</td>
 		</tr>
 	</table>
 
     <h2>Protokół głosowania w obwodzie<br />
     na listy kandydatówna posłów</h2>
-	<p>Głosowanie rozpoczęło się w dniu ${form.akcjaWyborcza.dzienMiesiacGlosowania} 20${form.akcjaWyborcza.rokGlosowania} r. 	
-	o godz. ${form.akcjaWyborcza.godzinaGlosowaniaOd} i trwało bez przerwy do godz. ${form.akcjaWyborcza.godzinaGlosowaniaDo}
+	<p>Głosowanie rozpoczęło się w dniu ${form.results.electoralCampaign.date} 2015 r. 	
+	o godz. ${form.results.electoralCampaign.startTime} i trwało bez przerwy do godz. ${form.results.electoralCampaign.endTime}
 	.</p>
 
 	<h3>I. Rozliczenie kart do głosowania</h3>
@@ -50,22 +60,22 @@
 		<tr>
 			<td class="lp" style="width:20px">1.</td>
 			<td style="width: 400px">Liczba wyborców uprawnionych do głosowania <i>(umieszczonych w spisie, z uwzględnieniem dodatkowych formularzy)</i> w chwili zakończenia głosowania</td>
-			<td style="width: 100px">${form.rozliczenieKart.pole1}</td>
+			<td style="width: 100px">${form.results.votingCards.totalEntitledToVote}</td>
 		</tr>
 		<tr>
 			<td class="lp">2.</td>
 			<td>Komisja otrzymała kart do głosowania</td>
-			<td>${form.rozliczenieKart.pole2}</td>
+			<td>${form.results.votingCards.totalCards}</td>
 		</tr>
 		<tr>
 			<td class="lp">3.</td>
 			<td>Nie wykorzystano kart do głosowania</td>
-			<td>${form.rozliczenieKart.pole3}</td>
+			<td>${form.results.votingCards.unusedCards}</td>
 		</tr>
 		<tr>
 			<td class="lp">4.</td>
 			<td>Liczba wyborców, którym wydano karty do głosowania</td>
-			<td>${form.rozliczenieKart.pole4}</td>
+			<td>${form.results.votingCards.regularVoters}</td>
 		</tr>
 		<tr class="uwaga">
 			<td colspan="3" class="uwaga"><b>Uwaga!</b> Suma liczb z pkt. 3 i 4 powinna być równa liczbie z pkt. 2. Jeśli tak nie jest, przypuszczalną przyczynę należy omówić w pkt. 9.</td>
@@ -73,13 +83,13 @@
 		<tr>
 			<td class="lp">5.</td>
 			<td>Liczba wyborców głosujących przez pełnomocnika <i>(liczba kart do głosowania wydanych na podstawie otrzymanych przez komisję aktów pełnomocnictwa)</i></td>
-			<td>${form.rozliczenieKart.pole5}</td>
+			<td>${form.results.votingCards.representativeVoters}</td>
 		</tr>
 		<tr class="uwaga"><td colspan="3"></td></tr>
 		<tr>
 			<td class="lp">6.</td>
 			<td>Liczba wyborców głosujących na podstawie zaświadczenia o prawie do głosowania</td>
-			<td>${form.rozliczenieKart.pole6}</td>
+			<td>${form.results.votingCards.certificateVoters}</td>
 		</tr>
 		<tr class="uwaga"><td colspan="3"></td></tr>
 		<tr>
@@ -160,17 +170,17 @@
 		<tr>
 			<td class="lp">12a.</td>
 			<td>w tym z powodu postawienia znaku &#8222;X&#8221; obok nazwiska dwóch lub większej liczby kandydatów z różnych list</td>
-			<td></td>
+			<td>${form.results.votingCards.invalidVotesToManyTicks}</td>
 		</tr>
 		<tr>
 			<td class="lp">12b.</td>
 			<td>w tym z powodu niepostawienia znaku &#8222;X&#8221; obok nazwiska żadnego kandydata z którejkolwiek z list</td>
-			<td></td>
+			<td>${form.results.votingCards.invalidVotesNoTicks}</td>
 		</tr>
 		<tr>
 			<td class="lp">12c.</td>
 			<td>w tym z powodu postawienia znaku &#8222;X&#8221; wyłącznie obok nazwiska kandydata z listy, której rejestracja została unieważniona (art. 227 &sect; 3 Kodeksu)</td>
-			<td></td>
+			<td>${form.results.votingCards.invalidVotesInvalidCandidate}</td>
 		</tr>
 		<tr>
 			<td class="lp">13.</td>
@@ -184,7 +194,7 @@
 
 	<h4>14. Na poszczególne listy kandydatów na posłów i umieszczonych na nich kandydatów na posłów oddano następujące liczby głosów ważnych:</h4>
 	#foreach($committee in $form.results.committeesList)
-	<p>Lista nr &ellip; &mdash; ${committee.committeeName}</p>
+	<p>Lista nr ${committee.committeeNumber} &mdash; ${committee.committeeName}</p>
 	<p>Liczba głosów ważnych oddanych na listę: ${committee.committeeVotesNumber}</p>
 	
 	<table class="with_borders">
@@ -198,12 +208,12 @@
 		<tr>
 			<td>&nbsp;</td>
 			<td style="text-align: right"><b>Razem:</b></td>
-			<td>${form.wynikiGlosowania.sumaGlosowWaznych}</td>
+			<td>${committee.totalCandidatesVotesNumber}</td>
 		</tr>
 	</table>	
 	#end
 
-	<p class="uwaga"><b>Uwaga!</b> Suma głosów oddanych na wszystkich kandydatów (rubryka ,,Razem'') <b>musi</b> być równa liczbie z pkt. 13, czyli liczbie głosów ważnych oddanych łącznie na wszystkich kandydatów.</p>
+	<p class="uwaga"><b>Uwaga!</b> Suma głosów oddanych na wszystkich kandydatów z danej listy (rubryka ,,Razem'') równa się liczbie głosów oddanych na tę listę. Wyjątek od tej zasady może dotyczyć listy, na której znajduje się nazwisko kandydata skreślonego z listy.</p>
 
 	<h3>III. Uwagi i adnotacje</h3>
 
@@ -214,7 +224,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole15}</td>
+			<td style="vertical-align: top">${form.comments.comments15}</td>
 		</tr>
 
 		<tr>
@@ -223,7 +233,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole16}</td>
+			<td style="vertical-align: top">${form.comments.comments16}</td>
 		</tr>
 
 		<tr>
@@ -232,7 +242,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole17}</td>
+			<td style="vertical-align: top">${form.comments.comments17}</td>
 		</tr>
 
 		<tr>
@@ -241,7 +251,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole18}</td>
+			<td style="vertical-align: top">${form.comments.comments18}</td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top">19.</td>
@@ -249,7 +259,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole19}</td>
+			<td style="vertical-align: top">${form.comments.comments19}</td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top">20.</td>
@@ -257,7 +267,7 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole20}</td>
+			<td style="vertical-align: top">${form.comments.comments20}</td>
 		</tr>
 		<tr>
 			<td style="vertical-align: top">21.</td>
@@ -265,17 +275,17 @@
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td style="vertical-align: top">${form.uwagiIAdnotacje.pole21}</td>
+			<td style="vertical-align: top">${form.comments.comments21}</td>
 		</tr>
 	</table>
 
 	<p>Przy sporządzaniu protokołu obecni byli członkowie Komisji:</p>
 
 	<table class="without_borders">
-		#foreach ( $czlonekKomisji in $form.czlonkowieKomisji)
+		#foreach ( $member in $form.members)
 		<tr>
 			<td class="lp" style="width: 20px; vertical-align: top">${velocityCount}.</td>
-			<td style="vertical-align:top">${czlonekKomisji.imie1} ${czlonekKomisji.imie2} ${czlonekKomisji.nazwisko} (${czlonekKomisji.funkcja})</td>
+			<td style="vertical-align:top">${member.firstName} ${member.middleName} ${member.lastName} (${member.function})</td>
 		</tr>
 		#end
 	</table>
