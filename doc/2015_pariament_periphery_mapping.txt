@@ -44,7 +44,7 @@ II. Ustalenie wyników głosowania
 
 
 14:
-- nr listy - results.committeeNumber
+- nr listy - results.committeesList.committeeNumber
 - oznaczenie listy nazwą lub skrótem nazwy komitetu wyborczego - results.committeesList.committeeName
 - liczba oddanych głosów na listę - results.committeesList.committeeVotesNumber
 
