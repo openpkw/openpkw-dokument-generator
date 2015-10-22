@@ -10,32 +10,41 @@
 
 <form>
 	<table class="with_borders">
+		<col width="7%">
+		<col width="12%">
+		<col width="8%">
+		<col width="4%">
+		<col width="7%">
+		<col width="14%">
+		<col width="8%">
+		<col width="11%">
+		<col width="13%">
+		<col width="16%">
 		<tr>
-			<td colspan="6"><h2>Wybory do Sejmu Rzeczypospolitej Polskiej zarządzone na dzień</h2></td>
+			<td colspan="10"><h2>Wybory do Sejmu Rzeczypospolitej Polskiej zarządzone na dzień</h2></td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: right">Kod terytorialny gminy<br/>(dzielnicy w m. st. Warszawie)</td>
-			<td>${form.results.territorialCode}</td>
-			<td colspan="2" style="text-align:right">Nr obwodu głosowania</td>
-			<td>${form.results.peripheryNumber}</td>
+			<td colspan="3" style="text-align: right">Kod terytorialny gminy<br/>(dzielnicy w m. st. Warszawie)</td>
+			<td colspan="3">${form.results.territorialCode}</td>
+			<td colspan="3" style="text-align:right">Nr obwodu głosowania</td>
+			<td colspan="1">${form.results.peripheryNumber}</td>
+		</tr>
+			<td colspan="4" style="text-align: right">Siedziba Obwodowej Komisji Wyborczej (adres)</td>
+			<td colspan="6"></td>
 		</tr>
 		<tr>
-			<td colspan="2" style="text-align: right">Siedziba Obwodowej Komisji Wyborczej (adres)</td>
-			<td colspan="4">${form.commission.address}</td>
+			<td colspan="1" style="text-align: right">Gmina/<br/>Dzielnica</td>
+			<td colspan="3"></td>
+			<td colspan="1" style="text-align: right">Powiat</td>
+			<td colspan="2"></td>
+			<td colspan="1" style="text-align: right">Województwo</td>
+			<td colspan="2"></td>
 		</tr>
 		<tr>
-			<td style="text-align: right">Gmina/Dzielnica</td>
-			<td>${form.commission.communeName}</td>
-			<td style="text-align: right">Powiat</td>
-			<td>${form.commission.countyName}</td>
-			<td style="text-align: right">Województwo</td>
-			<td>${form.commission.provinceName}</td>
-		</tr>
-		<tr>
-			<td>Okręg wyborczy nr</td>
-			<td>${form.commission.districtNumber}</td>
-			<td>Okręgowa Komisja Wyborcza w</td>
-			<td colspan="3">${form.commission.commissionNumber}</td>
+			<td colspan="2">Okręg wyborczy nr</td>
+			<td colspan="1"></td>
+			<td colspan="4">Okręgowa Komisja Wyborcza w</td>
+			<td colspan="3"></td>
 		</tr>
 	</table>
 
@@ -203,7 +212,7 @@
 	</table>	
 	#end
 
-	<p class="uwaga"><b>Uwaga!</b> Suma głosów oddanych na wszystkich kandydatów (rubryka ,,Razem'') <b>musi</b> być równa liczbie z pkt. 13, czyli liczbie głosów ważnych oddanych łącznie na wszystkich kandydatów.</p>
+	<p class="uwaga"><b>Uwaga!</b> Suma głosów oddanych na wszystkich kandydatów z danej listy (rubryka ,,Razem'') równa się liczbie głosów oddanych na tę listę. Wyjątek od tej zasady może dotyczyć listy, na której znajduje się nazwisko kandydata skreślonego z listy.</p>
 
 	<h3>III. Uwagi i adnotacje</h3>
 
