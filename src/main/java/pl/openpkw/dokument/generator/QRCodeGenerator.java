@@ -25,12 +25,14 @@ public class QRCodeGenerator {
     @Inject
     private VelocityEngine velocity;
 
-    public String createJsonDataForQRCode(Map formData) {
+    public String createJsonDataForQRCode(String templatePath, Map<Object, Object> formData) {
         try {
             VelocityContext context = new VelocityContext();
             context.put("form", formData);
-            String json = velocity.process("/templates/QRCodeJsonTemplate.json", context);
+            String json = velocity.process(templatePath, context);
             return json;
+        } catch (DokumentGeneratorException ex) {
+            throw ex;
         } catch (Exception ex) {
             throw new RuntimeException("Failed to create json data from Velocity template: " + ex.getMessage(), ex);
         }

@@ -24,7 +24,7 @@ public class ManualTest {
     public void run() {
         try {
             Client client = ClientBuilder.newClient();
-            String env = DEV;
+            String env = LOCAL;
             WebTarget target = client.target("http://"+env+"/openpkw-dokument-generator/service/protocol");
 
             String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/form.json").toURI())));

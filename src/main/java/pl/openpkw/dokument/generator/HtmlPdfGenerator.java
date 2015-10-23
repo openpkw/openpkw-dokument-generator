@@ -44,7 +44,8 @@ public class HtmlPdfGenerator {
             Path workingDirectory = Files.createTempDirectory("openpkw-");
             Path htmlFile = generateHtmlFileFromTemplate(templateFile, formData, workingDirectory);
 
-            byte[] qrCode = generateQRCodeFromFormData(formData);
+            templateFile = "/templates/" + templateName + ".txt";
+            byte[] qrCode = generateQRCodeFromFormData(templateFile, formData);
             saveFileInWorkingDirectory("qrcode.jpeg", workingDirectory, qrCode);
 
             copyFileToWorkingDirectory("/templates/styles.css", workingDirectory);
@@ -73,8 +74,8 @@ public class HtmlPdfGenerator {
         }
     }
 
-    private byte[] generateQRCodeFromFormData(Map<Object, Object> formData) {
-        String jsonData = qrCodeGenerator.createJsonDataForQRCode(formData);
+    private byte[] generateQRCodeFromFormData(String templatePath, Map<Object, Object> formData) {
+        String jsonData = qrCodeGenerator.createJsonDataForQRCode(templatePath, formData);
         return qrCodeGenerator.generate(jsonData);
     }
 
