@@ -21,7 +21,7 @@ public class ManualTest {
     public final static String SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY = "/sample-input-2015-parliament-sejm-periphery.json";
 
     public static void main(String[] args) {
-        new ManualTest().run(LOCAL, SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY);
+        new ManualTest().run(DEV, SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY);
     }
 
     public void run(String env, String input) {
