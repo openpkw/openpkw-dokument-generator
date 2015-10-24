@@ -75,7 +75,7 @@ public class HtmlPdfGenerator {
     }
 
     private byte[] generateQRCodeFromFormData(String templatePath, Map<Object, Object> formData) {
-        String jsonData = qrCodeGenerator.createJsonDataForQRCode(templatePath, formData);
+        String jsonData = qrCodeGenerator.createQRDataForQRCode(templatePath, formData);
         return qrCodeGenerator.generate(jsonData);
     }
 
