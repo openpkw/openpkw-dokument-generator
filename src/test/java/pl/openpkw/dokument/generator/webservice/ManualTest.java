@@ -16,18 +16,20 @@ public class ManualTest {
     
     public final static String LOCAL = "localhost:8080";
     public final static String DEV = "dobromir.openpkw.pl:9080";
+    
+    public final static String SAMPLE_INPUT_2015_PRESIDENT_PERIPHERY = "/sample-input-2015-president-periphery.json";
+    public final static String SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY = "/sample-input-2015-parliament-sejm-periphery.json";
 
     public static void main(String[] args) {
-        new ManualTest().run();
+        new ManualTest().run(DEV, SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY);
     }
 
-    public void run() {
+    public void run(String env, String input) {
         try {
             Client client = ClientBuilder.newClient();
-            String env = DEV;
             WebTarget target = client.target("http://"+env+"/openpkw-dokument-generator/service/protocol");
 
-            String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/form.json").toURI())));
+            String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource(input).toURI())));
 
             Response response = target.request().post(Entity.entity(form, MediaType.APPLICATION_JSON));
             System.out.println("Status: "+response.getStatus());

@@ -46,7 +46,14 @@ public class ProtocolService {
             byte[] pdfDocument = pdfGenerator.generate(form);
             return Response.ok(pdfDocument).build();
         } catch (DokumentGeneratorException ex) {
-            return Response.status(400).entity("{\"ErrorCode\":\""+ex.getError().getErrorCode()+"\",\"ErrorMessage\":\""+ex.getError().getErrorMessage()+"\"}").type(MediaType.APPLICATION_JSON).build();
+            String json = "{";
+            json += "\"ErrorCode\":\""+ex.getError().getErrorCode()+"\"";
+            json += ",\"ErrorMessage\":\""+ex.getError().getErrorMessage()+"\"";
+            if (ex.getAdditionalInfo() != null) {
+                json += ",\"AdditionalInfo\":\""+ex.getAdditionalInfo()+"\"";
+            }
+            json += "}";
+            return Response.status(400).entity(json).type(MediaType.APPLICATION_JSON).build();
         }
     }
 }

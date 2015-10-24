@@ -12,6 +12,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import org.apache.velocity.VelocityContext;
+import org.apache.velocity.tools.generic.NumberTool;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -22,17 +23,25 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 @Singleton
 public class QRCodeGenerator {
 
-    @Inject
     private VelocityEngine velocity;
+    
+    @Inject
+    public QRCodeGenerator(VelocityEngine velocity) {
+        this.velocity = velocity;
+    }
 
-    public String createJsonDataForQRCode(Map formData) {
+    public String createQRDataForQRCode(String templatePath, Map<Object, Object> formData) {
         try {
             VelocityContext context = new VelocityContext();
+            context.put("numberTool", new NumberTool());
             context.put("form", formData);
-            String json = velocity.process("/templates/QRCodeJsonTemplate.json", context);
-            return json;
+            String qrData = velocity.process(templatePath, context);
+            qrData = qrData.replaceAll("\\s", "");
+            return qrData;
+        } catch (DokumentGeneratorException ex) {
+            throw ex;
         } catch (Exception ex) {
-            throw new RuntimeException("Failed to create json data from Velocity template: " + ex.getMessage(), ex);
+            throw new RuntimeException("Failed to create QR data data from Velocity template: " + ex.getMessage(), ex);
         }
     }
 

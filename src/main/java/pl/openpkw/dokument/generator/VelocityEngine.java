@@ -39,7 +39,7 @@ public class VelocityEngine {
             return result;
         } catch (ResourceNotFoundException ex) {
             ex.printStackTrace();
-            throw new DokumentGeneratorException(DokumentGeneratorError.TEMPLATE_NOT_FOUND); 
+            throw new DokumentGeneratorException(DokumentGeneratorError.TEMPLATE_NOT_FOUND, templateName); 
         } catch (Exception ex) {
             throw new RuntimeException("Failed to process a Velocity template "+templateName+": " + ex.getMessage(), ex);
         }
