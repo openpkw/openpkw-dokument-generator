@@ -1,12 +1,35 @@
-{
-    "kodTerytorialnyGminy":"${form.komisja.kodTerytorialnyGminy}",
-    "nrObwoduGlosowania":"${form.komisja.numerObwoduGlosowania}",  
-    "glosowWaznych":${form.wynikiGlosowania.pole13},
-    "glosujacych":${form.wynikiGlosowania.pole9},
-#foreach($kandydat in $form.wynikiGlosowania.pole14)
-    "k${velocityCount}":${kandydat.sumaGlosowWaznych},
+$form.results.territorialCode,
+$form.results.peripheryNumber,
+
+$form.results.votingCards.totalEntitledToVote,
+$form.results.votingCards.totalCards,
+$form.results.votingCards.unusedCards,
+$form.results.votingCards.regularVoters,
+$form.results.votingCards.representativeVoters,
+$form.results.votingCards.certificateVoters,
+
+$form.results.correspondenceVoting.issuedPackages,
+$form.results.correspondenceVoting.receivedReplyEnvelopes,
+$form.results.correspondenceVoting.missingStatement,
+$form.results.correspondenceVoting.missingSignatureOnStatement,
+$form.results.correspondenceVoting.missingEnvelopeForVotingCard,
+$form.results.correspondenceVoting.unsealedEnvelope,
+$form.results.correspondenceVoting.envelopesThrownToBallotBox,
+
+$form.results.votingCards.cardsFromBallotBox,
+$form.results.votingCards.cardsFromEnvelopes,
+$form.results.votingCards.invalidCards,
+$form.results.votingCards.validCards,
+$form.results.votingCards.invalidVotes,
+$form.results.votingCards.validVotes,
+
+#foreach($committee in $form.results.committeesList)
+	#foreach($candiate in $committee.candidate)
+		#if($candiate.candidateVotesNumber > 0)
+			#if($velocityCount > 0)
+			,
+			#end	
+			$numberTool.format("00",$committee.committeeNumber)$numberTool.format("00",$velocityCount);$candiate.candidateVotesNumber
+		#end
+	#end
 #end
-    "glosowNieWaznych":${form.wynikiGlosowania.pole12},
-    "kartWaznych":${form.wynikiGlosowania.pole11},
-    "uprawnionych":${form.rozliczenieKart.pole1}
-}
