@@ -1,0 +1,874 @@
+{"templateName":"2015_parliament_periphery",
+"formData":{
+  "userName" : null,
+  "token" : null,
+  "okwJsonLink" : null,
+  "sendDate" : null,
+  "results" : {
+    "territorialCode" : "hopsa&sasa",
+    "peripheryNumber" : 711,
+    "peripheralCommissionAddress" : "?",
+    "commune" : "?",
+    "county" : "?",
+    "province" : "?",
+    "districtNumber" : "?",
+    "districtCommissionAddress" : "?",
+    "electoralCampaign" : {
+      "date" : "?",
+      "startTime" : "?",
+      "endTime" : "?"
+    },
+    "votingCards" : {
+      "totalEntitledToVote" : 1,
+      "totalCards" : 2,
+      "unusedCards" : 3,
+      "regularVoters" : 4,
+      "representativeVoters" : 5,
+      "certificateVoters" : 6,
+      "cardsFromBallotBox" : 1257,
+      "cardsFromEnvelopes" : 12,
+      "invalidCards" : 1245,
+      "validCards" : 265,
+      "invalidVotes" : 193,
+      "invalidVotesToManyTicks" : 7,
+      "invalidVotesNoTicks" : 8,
+      "invalidVotesInvalidCandidate" : 9,
+      "validVotes" : 18
+    },
+    "correspondenceVoting" : {
+      "issuedPackages" : 10,
+      "receivedReplyEnvelopes" : 11,
+      "missingStatement" : 12,
+      "missingSignatureOnStatement" : 13,
+      "missingEnvelopeForVotingCard" : 14,
+      "unsealedEnvelope" : 15,
+      "envelopesThrownToBallotBox" : 16
+    },
+    "committeesList" : [ {
+      "committeeName" : "Komitet Wyborczy Prawo i Sprawiedliwo",
+      "committeeNumber" : 1,
+      "committeeVotesNumber" : 265,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "KACZY�SKI Jaros�aw Aleksander",
+        "candidateVotesNumber" : 193
+      }, {
+        "candidateName" : "KAMI�SKI Mariusz",
+        "candidateVotesNumber" : 18
+      }, {
+        "candidateName" : "GOSIEWSKA Ma�gorzata Maria",
+        "candidateVotesNumber" : 13
+      }, {
+        "candidateName" : "KARSKI Karol Adam",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "DWORCZYK Micha� Pawe�",
+        "candidateVotesNumber" : 6
+      }, {
+        "candidateName" : "G�RSKI Artur Cezary",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "WIPLER Przemys�aw Janusz",
+        "candidateVotesNumber" : 5
+      }, {
+        "candidateName" : "KO�ODZIEJSKI Witold Czes�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "TOMASZEWSKA Ewa",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "M�LLER Piotr J�zef",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MELAK Andrzej J�zef",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "RACZY�SKA-WEINSBERG Ma�gorzata Helena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KASPRZYK Jan J�zef",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "KACZMARSKA Agnieszka",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GAJADHUR Alvin",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "LISIECKI Pawe� Jacek",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KONDRAT Micha� Stanis�aw",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "GR�ZIAK Anna Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "NIEDZIELA Janusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ZALEWSKI Krzysztof Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JURKIEWICZ Cezary Andrzej",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "MIERZEJEWSKA Hanna El�bieta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MACIEJOWSKI Maciej Juliusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CIERPISZ Zbigniew Adam",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CACKOWSKI Marek Jan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "TERLECKA Miros�awa Hanna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KOMOREK Irena Teresa",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WASILEWSKI Witold Ludwik",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RYLSKA Barbara",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "POLAK Katarzyna Maria",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "WR�BEL S�awomir Rafa�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MURDOCH Anna El�bieta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "REWI�SKI Jonasz Maksymilian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "J�DRYCHOWSKA Anna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WOJDALSKI Janusz Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SULI�SKA El�bieta Krystyna",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "TERLECKI Pawe� Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "S�OMI�SKA Ma�gorzata Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "AUGUSTYNOWICZ-FIGAT Barbara",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KWIATKOWSKI Adam Mariusz",
+        "candidateVotesNumber" : 6
+      } ]
+    }, {
+      "committeeName" : "Komitet Wyborczy SLD",
+      "committeeNumber" : 2,
+      "committeeVotesNumber" : 76,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "OBLIZAJEK Micha� Wojciech",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "LAZAR Ma�gorzata Ewa",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MORAWIEC Maciej J�zef",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "HANUSZ Piotr Jerzy",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KARDASZ Ewa",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PYTLAK Henryk J�zef",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WR�BLEWSKI Giedymin",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "�LEPOWRO�SKA Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GADZINOWSKI Piotr",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KALISZ Ryszard Roman",
+        "candidateVotesNumber" : 45
+      }, {
+        "candidateName" : "BALICKI Marek Zbigniew",
+        "candidateVotesNumber" : 14
+      }, {
+        "candidateName" : "PIECHNA-WI�CKIEWICZ Paulina Krystyna",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "LEGIERSKI Krystian �ukasz",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "TYSI�C Alicja Agnieszka",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "GRZYBEK Agnieszka Magdalena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PSTROKO�SKI Andrzej Stefan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PROCKI Marek",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "TONDERA Maria Barbara",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "MARSZA�EK Waldemar Antoni",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "GROCHALA Dorota Lidia",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "G�SICKI Janusz Tadeusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WI�NIEWSKA El�bieta Magdalena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KRA�KO Tadeusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "G�OWACZ Daniel Franciszek",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KULCZYCKA-G�SIOREK El�bieta Jadwiga",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CZERSKA Bogumi�a Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "OPRZ�DEK Mariusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MARDOFEL Gra�yna Bogumi�a",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SZOSTAKIEWICZ Stanis�aw Wincenty",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RYTEL Micha� Miros�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SZLENDAK Judyta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "B�ASZCZAK Marzena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KOWALSKI Daniel Marek",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "SADOWSKI Adam Micha�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JANKOWSKA Alicja Janina",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GAJEWSKI Sebastian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JAROSZ Joanna Patrycja",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KAMI�SKA Kamila",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KLAUDZI�SKI Jacek Marian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BAJ Bogdan",
+        "candidateVotesNumber" : 0
+      } ]
+    }, {
+      "committeeName" : "Komitet Wyborczy PPP - Sierpie",
+      "committeeNumber" : 3,
+      "committeeVotesNumber" : 1,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "JANISZEWSKA Magdalena Anna",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KANIA Bogdan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BIELI�SKA Katarzyna Helena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "LANCMAN Krzysztof Zbigniew",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "STRZE�EK Jan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "�UCZYCKI Micha� Pawe�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ZIELENIEWSKI Rafa� Roman",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ZACHERT Katarzyna Magdalena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "FELIKSIAK Wies�aw Marian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KRAKOWIAK Henryk",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MAGIERSKI Kazimierz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CICHO� Henryka",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "STASIAK Tadeusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIRIM Krzysztof Tomasz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "NIEWIADOMSKI Adam Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "TRZEBI�SKI Jan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "W�JCIK Daria Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MAKUSZY�SKA Marta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CZERSKI Kamil Marcin",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SZYMA�SKI Robert Stefan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MALANGIEWICZ Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ANDZIAK Henryk Sebastian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SOBCZAK Ma�gorzata Hanna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "D�BROWSKI W�adys�aw Henryk",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JAKUBOWSKI Dawid Witold",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GAW�OWSKA Justyna Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "�UBOWSKA Dorota El�bieta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BELKA Barbara",
+        "candidateVotesNumber" : 0
+      } ]
+    }, {
+      "committeeName" : "Komitet Wyborczy PSL",
+      "committeeNumber" : 4,
+      "committeeVotesNumber" : 16,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "KALINOWSKA-BOUVY Agata Dorota",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KURYLUK Krystyna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KACZY�SKI Grzegorz Jerzy",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "G�A�EWSKI Wojciech",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RAKIEL-CZARNECKA Walentyna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RYPI�SKA-OLSSON Maria Jolanta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ST�PNIEWSKI Andrzej Adam",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "DYDUCH Janusz",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "W�JCIK Stanis�aw Jakub",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "STR�K Micha� Stanis�aw",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "WYSZY�SKA Teresa Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BOGIEL Teresa Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JANUSZ Agnieszka",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WA�BI�SKI Tomasz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RUTKOWSKA Miros�awa",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "OSSOWSKA Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "NASIADKA Ilona",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WASILEWSKA Lucyna Gertruda",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "DZIAK Hanna El�bieta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MAT�ACKI Robert Adam",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GARSTKA Tatiana Joanna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ORNOCH Marek Jacek",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PA�ASZ Ewa Agata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "FARKOWSKA Agata Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CHO�AST Sylwester Adam",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GRUDOWSKA Agata Zofia",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KO�ODZIEJSKI Wies�aw Stanis�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "M�YNARCZYK Agata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "STRUZIK Adam Krzysztof",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "KOZAKIEWICZ W�adys�aw",
+        "candidateVotesNumber" : 6
+      }, {
+        "candidateName" : "SK�RA Sylwester",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "W�GORZEWSKA-WHISKERD Alicja Dorota",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "SOKO�OWSKA Jowita",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JEDLEWSKA Maria Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JA�NIAK W�odzimierz Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ROZBICKI Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "G�RSKA Urszula Dorota",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GRYZEL Boles�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BOBOWSKI Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WIDE� Sebastian Bart�omiej",
+        "candidateVotesNumber" : 0
+      } ]
+    }, {
+      "committeeName" : "Komitet Wyborczy Ruch Palikota",
+      "committeeNumber" : 5,
+      "committeeVotesNumber" : 113,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "PALIKOT Janusz Marian",
+        "candidateVotesNumber" : 102
+      }, {
+        "candidateName" : "NOWICKA Wanda Hanna",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "SZYPU�A Tomasz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SENDECKA Aleksandra Aniela",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MIERNIK Micha� Jerzy",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MIERZEWICZ Barbara Anna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "DO�ECKI Andrzej Dariusz",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "WAWRZY�CZYK Paulina",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "NIECZ Krzysztof Micha�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RUCI�SKA Agnieszka Eliza",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KACZMAREK Marcin",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIECHOWIAK - GRZYMA�A Agnieszka",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WOJCIECHOWSKI Mariusz",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KOZICKA Ewa",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KOZ�OWSKI Julian",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "PIASECKA Milena Anna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GNYSI�SKI Robert Miros�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KARBOWSKA Monika Agnieszka",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BUSCH Norbert Rudolf",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "�UKOWSKA Jadwiga Katarzyna",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "PACEWICZ Andrzej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KAMI�SKA Natalia",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "GA�USZKA Rados�aw Sebastian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WERCZY�SKA Katarzyna Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SKOWRO�SKI Mieczys�aw Witold",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BRA�SKA Katarzyna Anna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BONKOWSKI Jaros�aw Antoni",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIOTROWSKA Gra�yna Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SURDEL Stanis�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "DOBROWOLSKA-WO� Magdalena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JASTRZ�BSKI Jaros�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIETRZAK Teresa",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MIERNIK Bart�omiej",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "�NIEG-BOGUSZEWSKA Magdalena Karolina",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KIENDZIERSKI Kamil",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "CHOJNACKA Anna Danuta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ANTOSZEWSKI Grzegorz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BANASIK Joanna Iwona",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "LESIAK Konrad Aleksander",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JANKOWSKA Dorota Anna",
+        "candidateVotesNumber" : 0
+      } ]
+    }, {
+      "committeeName" : "KW Platforma Obywatelska RP",
+      "committeeNumber" : 6,
+      "committeeVotesNumber" : 741,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "FABISIAK Joanna",
+        "candidateVotesNumber" : 10
+      }, {
+        "candidateName" : "KIERWI�SKI Marcin Piotr",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "CZUMA Andrzej Bobola",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "KRAJEWSKA Ligia",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "�WI�CICKI Marcin",
+        "candidateVotesNumber" : 13
+      }, {
+        "candidateName" : "JAWORSKI Lech W�odzimierz",
+        "candidateVotesNumber" : 4
+      }, {
+        "candidateName" : "KOSECKI Roman Jacek",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "LECH Pawe� Piotr",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "DOLCZEWSKI Dariusz Dominik",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "ROSS Tadeusz Edward",
+        "candidateVotesNumber" : 6
+      }, {
+        "candidateName" : "D�BROWSKA Alicja",
+        "candidateVotesNumber" : 8
+      }, {
+        "candidateName" : "SZCZERBA Micha� Roch",
+        "candidateVotesNumber" : 6
+      }, {
+        "candidateName" : "CZESZEJKO-SOCHACKA Ewa Jadwiga",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "SKOLIMOWSKI Krzysztof Piotr",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "PRZYBYSZEWSKA-KUJAWA Beata Joanna",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "WR�BEL Robert Dariusz",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "LERCZAK Magdalena",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "GO�OTA �ukasz",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "MALESA Wojciech Marian",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RABCZON Mariola",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KROPACZ Jerzy Tadeusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KRAKOWSKI Roman Wojciech",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KO�OS-JAGIE��O Jolanta Sabina",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "MALINA Andrzej Janusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WI�ZOWSKA Kinga Agata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JANISZEWSKI Mieczys�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WALIG�RA Joanna Alicja",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "BANASIAK Teresa Renata",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "FILI�SKI Jaros�aw Henryk",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "MIASTOWSKA-GIEREK Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIASECKI Piotr Micha�",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "SADOWSKA Wanda Teresa",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "RZEPCZY�SKI Juliusz Zbigniew",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SZYMA�SKA-S�OK Eliza Maria",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "KOSSAK Anna Maria",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "BER�OWSKA Halina Teresa",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "JASTRZ�BSKI Leszek Andrzej",
+        "candidateVotesNumber" : 2
+      }, {
+        "candidateName" : "TUSK Donald Franciszek",
+        "candidateVotesNumber" : 552
+      }, {
+        "candidateName" : "KIDAWA-B�O�SKA Ma�gorzata Maria",
+        "candidateVotesNumber" : 80
+      }, {
+        "candidateName" : "VINCENT-ROSTOWSKI Jan Antony",
+        "candidateVotesNumber" : 23
+      } ]
+    }, {
+      "committeeName" : "KW Polska Jest Najwa",
+      "committeeNumber" : 7,
+      "committeeVotesNumber" : 33,
+      "totalCandidatesVotesNumber" : 0,
+      "candidate" : [ {
+        "candidateName" : "MATYJASIAK Wojciech Robert",
+        "candidateVotesNumber" : 1
+      }, {
+        "candidateName" : "JARA Adriana �ucja",
+        "candidateVotesNumber" : 3
+      }, {
+        "candidateName" : "KOBYLI�SKI Ernest Jerzy",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KLIMASZEWSKI Bartosz Kazimierz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RAFFINETTI Tymoteusz Mateusz",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "LASKOWSKI Rafa� Gabriel",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PEDA Marek Dominik",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "RESZKA Wojciech",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "REJDYCH Aleksander Piotr",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "LUKASEK Natalia Klaudia",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JAB�O�SKI Tomasz Robert",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "IWANOWSKA Bo�enna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SMOCZY�SKA Agnieszka Joanna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "POMIANOWSKI Antoni",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "WOJTIUK Karolina Justyna",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KACZOROWSKI Marcin Bogumi�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "STELMASZEWSKA Gra�yna Jolanta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "M�ODZIANKA Justyna Magdalena",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KARPETA Joanna Izabella",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "W�JCIK Marcin",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "D�BROWSKI Jan",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SOSNOWSKI Stanis�aw Antoni",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PIECYK Stanis�aw",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "SZTYK Ma�gorzata",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KULPA Henryk",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KWIATKOWSKA Danuta",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BOHDANOWICZ Katarzyna Anita",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "BUJALSKI W�adys�aw Pawe�",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KWA�NIEWSKA Agnieszka Maria",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "JASTRZ�BSKI Roman",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "KOWALSKI Marcin Robert",
+        "candidateVotesNumber" : 0
+      }, {
+        "candidateName" : "PONCYLJUSZ Pawe� Janusz",
+        "candidateVotesNumber" : 28
+      }, {
+        "candidateName" : "OKSIUTA Krzysztof Roman",
+        "candidateVotesNumber" : 1
+      } ]
+    } ]
+  }
+}}

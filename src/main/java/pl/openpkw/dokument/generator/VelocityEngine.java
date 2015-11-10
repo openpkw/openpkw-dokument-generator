@@ -36,12 +36,17 @@ public class VelocityEngine {
             template.merge(context, outWriter);
             outWriter.close();
             String result = new String(out.toByteArray(), "UTF-8");
+            result = escapeHtmlEntities(result);
             return result;
         } catch (ResourceNotFoundException ex) {
             ex.printStackTrace();
-            throw new DokumentGeneratorException(DokumentGeneratorError.TEMPLATE_NOT_FOUND, templateName); 
+            throw new DokumentGeneratorException(DokumentGeneratorError.TEMPLATE_NOT_FOUND, templateName);
         } catch (Exception ex) {
-            throw new RuntimeException("Failed to process a Velocity template "+templateName+": " + ex.getMessage(), ex);
+            throw new RuntimeException("Failed to process a Velocity template " + templateName + ": " + ex.getMessage(), ex);
         }
+    }
+
+    private String escapeHtmlEntities(String input) {
+        return input.replace((CharSequence) "&", "&amp;");
     }
 }
