@@ -46,15 +46,30 @@
             </properties>
         </profile>
         <profile>
-            <id>DEV</id>
+            <id>TEST</id>
             <activation>
                 <property>
                     <name>openpkw-env</name>
-                    <value>dev</value>
+                    <value>test</value>
                 </property>
             </activation>
             <properties>
                 <wildfly.management.host>dobromir.openpkw.pl</wildfly.management.host>
+                <wildfly.management.port>9999</wildfly.management.port>
+                <wildfly.management.user>jenkins</wildfly.management.user>
+                <wildfly.management.password></wildfly.management.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>UAT</id>
+            <activation>
+                <property>
+                    <name>openpkw-env</name>
+                    <value>uat</value>
+                </property>
+            </activation>
+            <properties>
+                <wildfly.management.host>pat.openpkw.pl</wildfly.management.host>
                 <wildfly.management.port>9999</wildfly.management.port>
                 <wildfly.management.user>jenkins</wildfly.management.user>
                 <wildfly.management.password></wildfly.management.password>
@@ -87,6 +102,37 @@
                     <username>${wildfly.management.user}</username>
                     <password>${wildfly.management.password}</password>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <includes>
+                        <include>**/When*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>pl/openpkw/dokument/generator/webservice/*.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.19</version>
+                <configuration>
+                    <includes>
+                        <include>pl/openpkw/dokument/generator/webservice/When*.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>integration-test</id>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
