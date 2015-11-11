@@ -17,15 +17,17 @@ import javax.ws.rs.core.MediaType;
 
 import org.junit.Test;
 
-public class When_requesting_PDF_document {
+public class When_requesting_PDF_document extends WebServiceTestBase {
+
+    private String environment = TEST;
 
     @Test
     public void should_return_binary_file_with_PDF_signature() throws Exception {
 
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/openpkw-dokument-generator/service/protocol");
+        WebTarget target = client.target("http://" + environment + "/openpkw-dokument-generator/service/protocol");
 
-        String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/form.json").toURI())));
+        String form = new String(Files.readAllBytes(Paths.get(this.getClass().getResource("/sample-input-2015-president-periphery.json").toURI())));
         System.out.println(form);
 
         byte[] response = target.request().post(Entity.entity(form, MediaType.APPLICATION_JSON), byte[].class);
