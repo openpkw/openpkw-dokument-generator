@@ -1,5 +1,6 @@
 $form.results.territorialCode,
 $form.results.peripheryNumber,
+$form.results.districtNumber,
 
 $form.results.votingCards.totalEntitledToVote,
 $form.results.votingCards.totalCards,
