@@ -4,8 +4,8 @@ Serwis wchodzcy w skład systemu OpenPKW, odpowiedzialny za generowanie dokument
 
 ## Środowiska
 * Continuous Delivery: http://cypisek.openpkw.pl:8080/view/OpenPKW%20Dokument%20Generator/
-* TEST: http://dobromir.openpkw.pl:9080/openpkw-dokument-generator
-* UAT: http://rumcajs.openpkw.pl:9080/openpkw-dokument-generator
+* TEST: http://rumcajs.openpkw.pl:9080/openpkw-dokument-generator
+* UAT: http://dobromir.openpkw.pl:9080/openpkw-dokument-generator
 * STAGE: jeszcze nie ma
 * PROD: jeszcze nie ma
 
