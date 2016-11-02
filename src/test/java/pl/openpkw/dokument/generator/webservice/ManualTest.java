@@ -15,13 +15,13 @@ import javax.ws.rs.core.Response;
 public class ManualTest {
     
     public final static String LOCAL = "localhost:8080";
-    public final static String DEV = "dobromir.openpkw.pl:9080";
+    public final static String TEST = "rumcajs.openpkw.pl:9080";
     
     public final static String SAMPLE_INPUT_2015_PRESIDENT_PERIPHERY = "/sample-input-2015-president-periphery.json";
     public final static String SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY = "/sample-input-2015-parliament-sejm-periphery.json";
 
     public static void main(String[] args) {
-        new ManualTest().run(DEV, SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY);
+        new ManualTest().run(TEST, SAMPLE_INPUT_2015_PARLIAMENT_SEJM_PERIPHERY);
     }
 
     public void run(String env, String input) {
