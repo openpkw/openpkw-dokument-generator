@@ -54,7 +54,7 @@
                 </property>
             </activation>
             <properties>
-                <wildfly.management.host>dobromir.openpkw.pl</wildfly.management.host>
+                <wildfly.management.host>rumcajs.openpkw.pl</wildfly.management.host>
                 <wildfly.management.port>9999</wildfly.management.port>
                 <wildfly.management.user>jenkins</wildfly.management.user>
                 <wildfly.management.password></wildfly.management.password>
@@ -69,7 +69,7 @@
                 </property>
             </activation>
             <properties>
-                <wildfly.management.host>rumcajs.open-pkw.pl</wildfly.management.host>
+                <wildfly.management.host>dobromir.openpkw.pl</wildfly.management.host>
                 <wildfly.management.port>9999</wildfly.management.port>
                 <wildfly.management.user>jenkins</wildfly.management.user>
                 <wildfly.management.password></wildfly.management.password>
